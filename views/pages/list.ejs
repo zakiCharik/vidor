@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>VIDEO.MA | Annonce detaille</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- fontawesome core CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="../css/scrolling-nav.css" rel="stylesheet">
+    <link href="../css/app.css" rel="stylesheet">
+    <link href="../../css/costume.css" rel="stylesheet">
+    <link href="../../css/minimale.css" rel="stylesheet">
+    <link href="../../css/editor.css" rel="stylesheet">
+    <link href="../../css/dropzone.css" rel="stylesheet">
+    <link href="../../css/jquery.tags.min.css" rel="stylesheet">
+    <link href="../../css/select2.min.css" rel="stylesheet">
+    <link href="../../css/skin-costum.css" rel="stylesheet">
+    <link href="../../css/flaticon.css" rel="stylesheet">
+    <link href="../../css/video_player.css" rel="stylesheet">
+    <!-- Bootstrap core JavaScript -->
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <style type="text/css">
+      /* Cosmetic only */
+      #easyPaginate {    float: left;display: contents;}
+      #easyPaginate div.col-md-4.col-lg-4.col-sm-6.col-xs-12.topaginate {display:block;margin-bottom:0px;}
+      .easyPaginateNav {width: fit-content !important;}
+      .easyPaginateNav a {padding:5px; color: orange !important;width: fit-content !important;}
+      .easyPaginateNav a.current {font-weight:bold;text-decoration:underline; }
+    </style>
+  </head>
+
+  <body id="page-top" >
+    <%- include( '../partials/header' ,{ user : null }) %>
+ 
+    <div  class="bg-light">
+      <div class="page-header-area-2 ">
+        <div class="container">
+          <div class="row">
+             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="small-breadcrumb">
+                   <div class="breadcrumb-link">
+                      <ul>
+                          <li>                       
+                               <a href="">
+                                  Home 
+                              </a>
+                          </li>
+                          <li class="active">
+                              <a href="" class="active">
+                                  Liste                      
+                              </a>
+                          </li>
+                     </ul>
+                   </div>                  
+                </div>
+             </div>
+          </div>
+        </div>
+      </div>  
+
+      <div class="" style="margin: 0px; padding: 15px; color: #777777;">
+        <div class="row">
+          
+
+          <div class="col-md-3 col-md-pull-9 col-sm-12 col-xs-12">
+             <div class="sidebar">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                   <div class="panel panel-default">
+                      <!-- Heading -->
+                      <div class="panel-heading" role="tab" id="headingFive">
+                         <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            Search By Keyword                </a>
+                         </h4>
+                      </div>
+                      <form method="get" action="http://carspot.scriptsbundle.com/search-cars/">
+                         <!-- Content -->
+                         <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive" aria-expanded="false" style="height: 0px;">
+                            <div class="panel-body">
+                               <div class="search-widget">
+                                  <input id="autocomplete-dynamic" autocomplete="off" class="form-control" placeholder="search" type="text" name="ad_title" value="">
+                                  <button type="submit"><i class="fa fa-search"></i></button>
+                               </div>
+                            </div>
+                         </div>
+                         <input type="hidden" name="carspot_layout_type" value="4">          
+                      </form>
+                   </div>
+                   <div class="panel panel-default">
+                      <!-- Heading -->
+                      <div class="panel-heading" role="tab" id="headingOne">
+                         <!-- Title -->
+                         <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            Select Make                </a>
+                         </h4>
+                         <!-- Title End -->
+                      </div>
+                      <!-- Content -->
+                      <form method="get" id="make_search" action="http://carspot.scriptsbundle.com/search-cars/">
+                         <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="height: 0px;">
+                            <div class="panel-body">
+                               <label class="control-label"> Select Make </label>
+                               <select class="search-select form-control select2-hidden-accessible" id="make_id" tabindex="-1" aria-hidden="true">
+                                  <option value=""> Select Any Category </option>
+                                  <option value="50">Alfa Romeo </option>
+                                  <option value="60">Aston Martin </option>
+                                  <option value="62">Audi </option>
+                                  <option value="65">Austin </option>
+                                  <option value="66">Austin Healey </option>
+                                  <option value="297">Aveo </option>
+                                  <option value="68">Bentley </option>
+                                  <option value="71">BMW </option>
+                                  <option value="302">Bolt </option>
+                                  <option value="307">Brothers </option>
+                                  <option value="314">Camaro </option>
+                                  <option value="325">Charger </option>
+                                  <option value="84">Corvette </option>
+                                  <option value="339">Dart </option>
+                                  <option value="103">Ferrari </option>
+                                  <option value="106">Ford </option>
+                                  <option value="119">Honda </option>
+                                  <option value="123">Hummer </option>
+                                  <option value="132">Jaguar </option>
+                                  <option value="134">Joy </option>
+                                  <option value="135">Lamborghini </option>
+                                  <option value="137">Land Rover </option>
+                                  <option value="156">McLaren </option>
+                                  <option value="157">Mercedes </option>
+                                  <option value="161">Mitsubishi </option>
+                                  <option value="167">Nissan </option>
+                                  <option value="169">Nitro </option>
+                                  <option value="172">Optra </option>
+                                  <option value="177">Porsche </option>
+                                  <option value="194">Renault </option>
+                                  <option value="198">Rolls-Royce </option>
+                                  <option value="210">Sonic </option>
+                                  <option value="211">Spark </option>
+                                  <option value="218">Stealth </option>
+                                  <option value="222">Suzuki </option>
+                                  <option value="239">Viper </option>
+                                  <option value="242">Volt </option>
+                               </select>
+                               <span class="select2 select2-container select2-container--classic" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-make_id-container"><span class="select2-selection__rendered" id="select2-make_id-container"><span class="select2-selection__placeholder">Select an option</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                               <div id="select_modal" class="margin-top-10"></div>
+                               <div id="select_modals" class="margin-top-10"></div>
+                               <div id="select_forth_div" class="margin-top-10"></div>
+                               <input type="submit" class="btn btn-theme btn-sm margin-top-10 margin-bottom-10" id="search_make" value="Search">
+                            </div>
+                         </div>
+                         <input type="hidden" name="cat_id" id="cat_id" value="">
+                         <input type="hidden" name="carspot_layout_type" value="4">  
+                      </form>
+                   </div>
+                   <div class="panel panel-default">
+                      <!-- Heading -->
+                      <div class="panel-heading" role="tab" id="location_heading">
+                         <!-- Title -->
+                         <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#ad-location" aria-expanded="false" aria-controls="ad-location" class="collapsed">
+                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            Ads By Location                </a>
+                         </h4>
+                         <!-- Title End -->
+                      </div>
+                      <!-- Content -->
+                      <form method="get" id="search_countries" action="http://carspot.scriptsbundle.com/search-cars/">
+                         <div id="ad-location" class="panel-collapse collapse " role="tabpanel" aria-labelledby="location_heading" aria-expanded="false">
+                            <div class="panel-body countries">
+                               <ul>
+                                  <li> 
+                                     <a href="javascript:void(0);" data-country-id="230">
+                                     United States 
+                                     <span>(12)</span>
+                                     </a>
+                                  </li>
+                               </ul>
+                            </div>
+                         </div>
+                         <input type="hidden" name="country_id" id="country_id" value="">
+                         <input type="hidden" name="carspot_layout_type" value="4">  
+                      </form>
+                      <div class="search-modal modal fade states_model" id="states_model" tabindex="-1" role="dialog" aria-hidden="true">
+                         <div class="modal-dialog">
+                            <div class="modal-content">
+                               <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">✕</span><span class="sr-only">Close</span></button>
+                                  <h3 class="modal-title text-center"> 
+                                     <i class="icon-gears"></i> 
+                                     Select Your Location 
+                                  </h3>
+                               </div>
+                               <div class="modal-body">
+                                  <!-- content goes here -->
+                                  <div class="search-block">
+                                     <div class="row">
+                                        <div class="col-md-12 col-xs-12 col-sm-12 popular-search" id="countries_response"></div>
+                                     </div>
+                                  </div>
+                               </div>
+                               <div class="modal-footer">
+                                  <button type="submit" id="country-btn" class="btn btn-lg btn-block"> Submit </button>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="panel panel-default">
+                      <!-- Heading -->
+                      <div class="panel-heading" role="tab" id="headingfour">
+                         <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            Price                </a>
+                         </h4>
+                      </div>
+                      <!-- Content -->
+                      <form method="get" action="http://carspot.scriptsbundle.com/search-cars/">
+                         <div id="collapsefour" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingfour" aria-expanded="false">
+                            <div class="panel-body">
+                               <span class="price-slider-value">Price                 ($ ) 
+                               <span id="price-min">500</span>
+                               - 
+                               <span id="price-max">100000</span>
+                               </span>
+                               <div id="price-slider" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
+                                  <div class="noUi-base">
+                                     <div class="noUi-origin noUi-connect" style="left: 0%;">
+                                        <div class="noUi-handle noUi-handle-lower"></div>
+                                     </div>
+                                     <div class="noUi-origin noUi-background" style="left: 100%;">
+                                        <div class="noUi-handle noUi-handle-upper"></div>
+                                     </div>
+                                  </div>
+                               </div>
+                               <div class="input-group margin-top-10">
+                                  <input type="text" class="form-control" name="min_price" id="min_selected" value="500">
+                                  <span class="input-group-addon">-</span>
+                                  <input type="text" class="form-control" name="max_price" id="max_selected" value="100000">
+                               </div>
+                               <input type="hidden" id="min_price" value="500">
+                               <input type="hidden" id="max_price" value="100000">
+                               <input type="submit" class="btn btn-theme btn-sm margin-top-10" value="Search">
+                            </div>
+                         </div>
+                         <input type="hidden" name="carspot_layout_type" value="4">       
+                      </form>
+                   </div>
+                   <div class="panel panel-default">
+                      <!-- Heading -->
+                      <div class="panel-heading" role="tab" id="ad-mileage">
+                         <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#mileage" aria-expanded="false" aria-controls="ad-mileage">
+                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            Ad Mileage (Km)                </a>
+                         </h4>
+                      </div>
+                      <!-- Content -->
+                      <form method="get" id="get_mileage" action="http://carspot.scriptsbundle.com/search-cars/" novalidate="">
+                         <div id="mileage" class="panel-collapse collapse " role="tabpanel" aria-labelledby="ad-mileage" aria-expanded="false">
+                            <div class="panel-body">
+                               <div class="input-group margin-top-10">
+                                  <input type="text" class="form-control" name="mileage_from" data-parsley-type="digits" data-parsley-required="true" data-parsley-error-message="Value should be numeric" placeholder="From" id="mileage_from" value="">
+                                  <span class="input-group-addon">-</span>
+                                  <input type="text" class="form-control" data-parsley-required="true" data-parsley-type="digits" data-parsley-error-message="Value should be numeric" placeholder="To" name="mileage_to" id="mileage_to" value="">
+                               </div>
+                               <input type="submit" class="btn btn-theme btn-sm margin-top-10" value="Search">
+                            </div>
+                         </div>
+                         <input type="hidden" name="carspot_layout_type" value="4">          
+                      </form>
+                   </div>
+                   <div class="panel panel-default">
+                      <!-- Heading -->
+                      <div class="panel-heading" role="tab" id="headingYear">
+                         <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#Yearcollapse" aria-expanded="false" aria-controls="Yearcollapse">
+                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            Year                </a>
+                         </h4>
+                      </div>
+                      <!-- Content -->
+                      <form method="get" action="http://carspot.scriptsbundle.com/search-cars/">
+                         <div id="Yearcollapse" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingYear" aria-expanded="false">
+                            <div class="panel-body">
+                               <div class="input-group  margin-top-10">
+                                  <span class="input-group-addon">From</span>
+                                  <select id="year_from" name="year_from" class="form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                     <option value="2010">2010 </option>
+                                     <option value="2011">2011 </option>
+                                     <option value="2012">2012 </option>
+                                     <option value="2013">2013 </option>
+                                     <option value="2014">2014 </option>
+                                     <option value="2015">2015 </option>
+                                     <option value="2016">2016 </option>
+                                     <option value="2017">2017 </option>
+                                  </select>
+                                  <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-year_from-container"><span class="select2-selection__rendered" id="select2-year_from-container" title="2010 "><span class="select2-selection__clear">×</span>2010 </span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                               </div>
+                               <div class="input-group">
+                                  <span class="input-group-addon">To</span>
+                                  <select id="year_to" name="year_to" class="form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                     <option value="2010">2010 </option>
+                                     <option value="2011">2011 </option>
+                                     <option value="2012">2012 </option>
+                                     <option value="2013">2013 </option>
+                                     <option value="2014">2014 </option>
+                                     <option value="2015">2015 </option>
+                                     <option value="2016">2016 </option>
+                                     <option value="2017">2017 </option>
+                                  </select>
+                                  <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-year_to-container"><span class="select2-selection__rendered" id="select2-year_to-container" title="2010 "><span class="select2-selection__clear">×</span>2010 </span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                               </div>
+                               <input type="submit" id="ad_year" class="btn btn-theme btn-sm margin-top-10" value="Search">
+                            </div>
+                         </div>
+                         <input type="hidden" name="carspot_layout_type" value="4">          
+                      </form>
+                   </div>
+                   <div class="panel panel-default">
+                      <!-- Heading -->
+                      <div class="panel-heading" role="tab" id="body_transmission">
+                         <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#transmission" aria-expanded="false" aria-controls="body_transmission">
+                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            Transmission                </a>
+                         </h4>
+                      </div>
+                      <!-- Content -->
+                      <form method="get" action="http://carspot.scriptsbundle.com/search-cars/">
+                         <div id="transmission" class="panel-collapse collapse " role="tabpanel" aria-labelledby="body_transmission" aria-expanded="false">
+                            <div class="panel-body">
+                               <div class="skin-minimal">
+                                  <ul class="list">
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="transmission-type-67" value="Automatic" name="transmission" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="transmission-type-67">Automatic </label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="transmission-type-151" value="Manual" name="transmission" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="transmission-type-151">Manual </label>
+                                     </li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                         <input type="hidden" name="carspot_layout_type" value="4">          
+                      </form>
+                   </div>
+                   <div class="panel panel-default">
+                      <!-- Heading -->
+                      <div class="panel-heading" role="tab" id="ad_body_type">
+                         <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#body_type" aria-expanded="false" aria-controls="ad_body_type">
+                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            Engine Type                </a>
+                         </h4>
+                      </div>
+                      <!-- Content -->
+                      <form method="get" action="http://carspot.scriptsbundle.com/search-cars/">
+                         <div id="body_type" class="panel-collapse collapse " role="tabpanel" aria-labelledby="ad_body_type" aria-expanded="false">
+                            <div class="panel-body">
+                               <div class="skin-minimal">
+                                  <ul class="list">
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="engine-type-81" value="CNG" name="engine_type" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="engine-type-81">CNG </label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="engine-type-96" value="Diesel" name="engine_type" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="engine-type-96">Diesel </label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="engine-type-126" value="Hybrid" name="engine_type" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="engine-type-126">Hybrid </label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="engine-type-176" value="Petrol" name="engine_type" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="engine-type-176">Petrol </label>
+                                     </li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                         <input type="hidden" name="carspot_layout_type" value="4">          
+                      </form>
+                   </div>
+                   <div class="panel panel-default">
+                      <!-- Heading -->
+                      <div class="panel-heading" role="tab" id="engince-capacity">
+                         <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#engine_capacity" aria-expanded="false" aria-controls="engince-capacity">
+                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            Engine Capacity (CC)                </a>
+                         </h4>
+                      </div>
+                      <!-- Content -->
+                      <form method="get" action="http://carspot.scriptsbundle.com/search-cars/">
+                         <div id="engine_capacity" class="panel-collapse collapse " role="tabpanel" aria-labelledby="engince-capacity" aria-expanded="false">
+                            <div class="panel-body">
+                               <div class="skin-minimal">
+                                  <ul class="list">
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="engine-capacity-29" value="1000" name="engine_capacity" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="engine-capacity-29">1000 cc</label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="engine-capacity-30" value="1200" name="engine_capacity" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="engine-capacity-30">1200 cc</label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="engine-capacity-31" value="1500" name="engine_capacity" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="engine-capacity-31">1500 cc</label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="engine-capacity-32" value="2000" name="engine_capacity" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="engine-capacity-32">2000 cc</label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="engine-capacity-42" value="2500" name="engine_capacity" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="engine-capacity-42">2500 cc</label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="engine-capacity-43" value="3000" name="engine_capacity" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="engine-capacity-43">3000 cc</label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="engine-capacity-44" value="3500" name="engine_capacity" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="engine-capacity-44">3500 cc</label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="engine-capacity-45" value="800" name="engine_capacity" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="engine-capacity-45">800 cc</label>
+                                     </li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                         <input type="hidden" name="carspot_layout_type" value="4">          
+                      </form>
+                   </div>
+                   <div class="panel panel-default">
+                      <!-- Heading -->
+                      <div class="panel-heading" role="tab" id="bodytype">
+                         <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#ad_bodytype" aria-expanded="false" aria-controls="body_type">
+                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            Body Type                </a>
+                         </h4>
+                      </div>
+                      <!-- Content -->
+                      <form method="get" action="http://carspot.scriptsbundle.com/search-cars/">
+                         <div id="ad_bodytype" class="panel-collapse collapse " role="tabpanel" aria-labelledby="bodytype" aria-expanded="false">
+                            <div class="panel-body">
+                               <div class="skin-minimal">
+                                  <ul class="list">
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="body-type-82" value="Convertible" name="body_type" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="body-type-82">Convertible </label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="body-type-85" value="Coupe" name="body_type" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="body-type-85">Coupe </label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="body-type-87" value="Crossover" name="body_type" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="body-type-87">Crossover </label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="body-type-100" value="Electric" name="body_type" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="body-type-100">Electric </label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="body-type-118" value="Hatchback" name="body_type" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="body-type-118">Hatchback </label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="body-type-127" value="Hybrid" name="body_type" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="body-type-127">Hybrid </label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="body-type-140" value="Luxury" name="body_type" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="body-type-140">Luxury </label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="body-type-203" value="Sedan" name="body_type" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="body-type-203">Sedan </label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="body-type-220" value="SUV" name="body_type" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="body-type-220">SUV </label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="body-type-226" value="Truck" name="body_type" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="body-type-226">Truck </label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="body-type-234" value="Van/Minivan" name="body_type" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="body-type-234">Van/Minivan </label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="body-type-243" value="Wagon" name="body_type" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="body-type-243">Wagon </label>
+                                     </li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                         <input type="hidden" name="carspot_layout_type" value="4">          
+                      </form>
+                   </div>
+                   <div class="panel panel-default">
+                      <!-- Heading -->
+                      <div class="panel-heading" role="tab" id="ad-color-family">
+                         <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#ad-color" aria-expanded="false" aria-controls="ad-color-family">
+                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            Color Family                </a>
+                         </h4>
+                      </div>
+                      <!-- Content -->
+                      <form method="get" action="http://carspot.scriptsbundle.com/search-cars/">
+                         <div id="ad-color" class="panel-collapse collapse " role="tabpanel" aria-labelledby="ad-color-family" aria-expanded="false">
+                            <div class="panel-body">
+                               <div class="skin-minimal">
+                                  <ul class="list">
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="ad_color-69" value="Black" name="color_family" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="ad_color-69">Black</label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="ad_color-70" value="Blue" name="color_family" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="ad_color-70">Blue</label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="ad_color-75" value="Bronze" name="color_family" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="ad_color-75">Bronze</label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="ad_color-113" value="Gold" name="color_family" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="ad_color-113">Gold</label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="ad_color-114" value="Green" name="color_family" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="ad_color-114">Green</label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="ad_color-115" value="Grey" name="color_family" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="ad_color-115">Grey</label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="ad_color-192" value="Red" name="color_family" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="ad_color-192">Red</label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="ad_color-206" value="Silver" name="color_family" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="ad_color-206">Silver</label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="ad_color-245" value="White" name="color_family" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="ad_color-245">White</label>
+                                     </li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                         <input type="hidden" name="carspot_layout_type" value="4">          
+                      </form>
+                   </div>
+                   <div class="panel panel-default">
+                      <!-- Heading -->
+                      <div class="panel-heading" role="tab" id="headingSeven">
+                         <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            Car Type                </a>
+                         </h4>
+                      </div>
+                      <!-- Content -->
+                      <form method="get" action="http://carspot.scriptsbundle.com/search-cars/">
+                         <div id="collapseSeven" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingSeven" aria-expanded="false">
+                            <div class="panel-body">
+                               <div class="skin-minimal">
+                                  <ul class="list">
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input tabindex="7" type="radio" id="minimal-radio-76" name="ad_type" value="Buy" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="minimal-radio-76">Buy</label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input tabindex="7" type="radio" id="minimal-radio-204" name="ad_type" value="Sell" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="minimal-radio-204">Sell</label>
+                                     </li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                         <input type="hidden" name="carspot_layout_type" value="4">          
+                      </form>
+                   </div>
+                   <div class="panel panel-default">
+                      <!-- Heading -->
+                      <div class="panel-heading" role="tab" id="ad-insurance">
+                         <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#insurance" aria-expanded="false" aria-controls="ad-insurance">
+                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            Car Insurance                </a>
+                         </h4>
+                      </div>
+                      <!-- Content -->
+                      <form method="get" action="http://carspot.scriptsbundle.com/search-cars/">
+                         <div id="insurance" class="panel-collapse collapse " role="tabpanel" aria-labelledby="ad-insurance" aria-expanded="false">
+                            <div class="panel-body">
+                               <div class="skin-minimal">
+                                  <ul class="list">
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="ad_color-170" value="No" name="insurance" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="ad_color-170">No</label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="ad_color-247" value="Yes" name="insurance" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="ad_color-247">Yes</label>
+                                     </li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                         <input type="hidden" name="carspot_layout_type" value="4">          
+                      </form>
+                   </div>
+                   <div class="panel panel-default">
+                      <!-- Heading -->
+                      <div class="panel-heading" role="tab" id="ad-assembly-type">
+                         <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#ad-assembly" aria-expanded="false" aria-controls="ad-assembly-type">
+                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            Car Assembly                </a>
+                         </h4>
+                      </div>
+                      <!-- Content -->
+                      <form method="get" action="http://carspot.scriptsbundle.com/search-cars/">
+                         <div id="ad-assembly" class="panel-collapse collapse " role="tabpanel" aria-labelledby="ad-assembly-type" aria-expanded="false">
+                            <div class="panel-body">
+                               <div class="skin-minimal">
+                                  <ul class="list">
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="ad-assembly-131" value="Imported" name="assembly" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="ad-assembly-131">Imported</label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input type="radio" id="ad-assembly-139" value="Local" name="assembly" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="ad-assembly-139">Local</label>
+                                     </li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                         <input type="hidden" name="carspot_layout_type" value="4">          
+                      </form>
+                   </div>
+                   <div class="panel panel-default">
+                      <!-- Heading -->
+                      <div class="panel-heading" role="tab" id="headingThree">
+                         <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            Condition                </a>
+                         </h4>
+                      </div>
+                      <!-- Content -->
+                      <form method="get" action="http://carspot.scriptsbundle.com/search-cars/">
+                         <input type="hidden" name="carspot_layout_type" value="4">          
+                         <div id="collapseThree" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingThree" aria-expanded="false">
+                            <div class="panel-body">
+                               <div class="skin-minimal">
+                                  <ul class="list">
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input tabindex="7" type="radio" id="minimal-radio-166" name="condition" value="New" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="minimal-radio-166">New</label>
+                                     </li>
+                                     <li>
+                                        <div class="iradio_minimal" style="position: relative;"><input tabindex="7" type="radio" id="minimal-radio-231" name="condition" value="Used" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        <label for="minimal-radio-231">Used</label>
+                                     </li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                      </form>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <!-- profile end nav -->
+          <!-- ==================== -->
+          <!-- Infor and list of ads -->
+          <div class="col-lg-9">
+
+            <div class="row" >
+              <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 ">
+                 <div class="clearfix"></div>
+                 <div class="listingTopFilterBar row">
+                    <div class="col-md-7 col-xs-12 col-sm-6 no-padding">
+                       <ul class="filterAdType">
+                          <li class="active">
+                             <a href="javascript:void(0)">Found Ads                                        
+                              <small>(<%= Cars.length %>)</small>
+                             </a>
+                          </li>
+                          <li class="">
+                             <a href="http://carspot.scriptsbundle.com/search-cars/">Reset Search</a>
+                          </li>
+                       </ul>
+                    </div>
+                    <div class="col-md-5 col-xs-12 col-sm-6 no-padding">
+                       <div class="header-listing">
+                          <h6>Sort by:</h6>
+                          <div class="custom-select-box">
+                             <form method="get">
+                                <select name="sort" id="order_by" class="custom-select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                   <option value="id-desc">
+                                      Newest To Oldest                                            
+                                   </option>
+                                   <option value="id-asc">
+                                      Oldest To New                                            
+                                   </option>
+                                   <option value="title-asc">
+                                      Alphabetically [a-z]                                            
+                                   </option>
+                                   <option value="title-desc">
+                                      Alphabetically [z-a]                                            
+                                   </option>
+                                   <option value="price-desc">
+                                      Highest price                                            
+                                   </option>
+                                   <option value="price-asc">
+                                      Lowest price                                            
+                                   </option>
+                                </select>
+                                <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-order_by-container"><span class="select2-selection__rendered" id="select2-order_by-container" title="Newest To Oldest">
+                                   <span class="select2-selection__clear">×</span>
+                                Newest To Oldest                                            
+                                </span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                <input type="hidden" name="carspot_layout_type" value="4">                                    
+                             </form>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div id="easyPaginate" style="width: 100%;">
+                <% for (var i = 0; i < Cars.length; i++ ) {  %>
+                  <div class="col-md-4  col-lg-4 col-sm-6 col-xs-12 topaginate" >
+                    <div class="category-grid-box-1">
+                      <div class="featured-ribbon"><span>Featured</span></div>
+                      <div class="image">
+                        <a data-href="<%= Cars[i].video %>" class="play-video">
+                          <img src="http://carspot.scriptsbundle.com/wp-content/uploads/2017/08/playbutton-u693-r.png" alt="Icon"></a>
+                        <a href="">
+                          <img src="<%= (Cars[i].video).replace('https://www.youtube.com/watch?v=','https://img.youtube.com/vi/')%>/0.jpg" alt="Mustang Shelby GT350 Coupe" class="img-responsive"></a> 
+                        <div class="price-tag">
+                        <div class="price"><span><%= Cars[i].prix %> DHS</span> </div>
+                        </div>
+                      </div>
+                      <div class="short-description-1 clearfix">
+                        <div class="category-title"> 
+                            <span class="padding_cats">
+                              <a href=""><%= Cars[i].marque %></a>
+                            </span>
+                            <span class="padding_cats">
+                              <a href=""><%= Cars[i].model %></a>
+                            </span> 
+                        </div>
+                        <h3> 
+                          <a href=""><%= Cars[i].title %></a>
+                        </h3>
+                        <p class="location">
+                          <i class="fa fa-map-marker"></i>
+                          <a href=""><%= Cars[i].emplacement %></a>
+                        </p>
+                        <ul class="list-unstyled">
+                          <li><i class="flaticon-gas-station-1"></i><%= Cars[i].carburant %></li>
+                          <li><i class="flaticon-dashboard"></i><%= Cars[i].kilometrage %>  Km</li>
+                          <li><i class="flaticon-engine-2"></i><%= Cars[i].puissancefiscal %>  cc</li>
+                          <li><i class="flaticon-car-2"></i><%= Cars[i].model %></li>
+                          <li><i class="flaticon-cogwheel-outline"></i><%= Cars[i].colorcarousserie %></li>
+                        </ul>
+                      </div>
+                      <div class="ad-info-1">
+                        <p style="float: left;line-height: 2.5;width:50%;margin: auto;height: auto;">
+                          <i class="flaticon-calendar"></i> &nbsp;<span><%= Cars[i].date_publication %></span> 
+                        </p>
+                        <ul class="pull-right ">
+                          <li> 
+                            <a data-toggle="tooltip" data-placement="top" title="" data-original-title="Saved Ad" href="javascript:void(0);" class="save-ad" data-adid="81"><i class="flaticon-like-1"></i></a> 
+                          </li>
+                          <li> 
+                            <a href=""><i class="flaticon-message"></i></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- Listing Ad Grid -->
+                  </div>
+                <% } %>
+              </div>
+
+            </div>
+        <!-- Infor and list of ads -->
+        </div>
+      </div>
+    </div>
+
+    <%- include( '../partials/footer') %>
+
+    
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Plugin JavaScript -->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="../js/scrolling-nav.js"></script>
+    <!-- Custom JavaScript for video player modal -->
+    <script src="../js/video_player.js"></script>
+
+    <script src="../js/custom.js"></script>
+    <script src="../js/jquery.easyPaginate.js"></script>
+    <!-- Google Map  -->
+    <script type="text/javascript">
+      $("a.play-video").YouTubePopUp();
+      $('#easyPaginate').easyPaginate({
+          paginateElement: 'div.col-md-4.col-lg-4.col-sm-6.col-xs-12.topaginate',
+          elementsPerPage: 6,
+          effect: 'default',
+          firstButton:true
+      });
+      $('.up-user-face').on('click',function(){
+        if (!$('.login-nav').is(':visible')) {
+
+          $(this).children().css('background',' #fc9632')
+          $('.login-nav').show();
+        }else{
+          $(this).children().css('background','transparent')
+          $('.login-nav').hide();
+        }
+      });
+
+    </script>
+
+  </body>
+
+</html>
+
+
+

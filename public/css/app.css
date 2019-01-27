@@ -1,0 +1,359 @@
+*{
+/*  font-family: 'Gentium Basic';*/
+}
+.abcRioButtonLightBlue {
+  background-color: #fff !important;
+    color: #757575 !important;
+    width: 100% !important;
+    height: 38px !important;
+}
+
+.green{
+  color: green !important;
+}
+.red{
+  color: red !important;
+}
+.orange{
+  color: orange !important;
+}
+._top-header{
+  height: 40px;
+  background-color: #454d56fc;
+}
+/*Login nav*/
+.login-nav{
+  display: none;
+  background: white;
+  padding: 20px;
+  position: absolute;
+  height: fit-content;
+  z-index: 300;
+  margin-left: -162px;
+  top: 69px;
+}
+.login-nav:before{
+  transform: rotate(-31deg);
+  content: "\A";
+  border-style: solid;
+  border-width: 10px 15px 10px 0;
+  border-color: transparent #fdfcfc transparent transparent;
+  position: absolute;
+  left: 194px;
+  top: -7px;
+}
+
+
+.logBtn {
+    display: inline;
+    text-align: center;
+    padding: 17px 28px 15px;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: #fff !important;
+    border-radius: 3px;
+    background-color: #fa9539;
+    text-decoration: none !important;
+    outline: none !important;
+    visibility: visible;
+    border: none;
+    white-space: normal;
+    box-shadow: 0 2px 0 #f17f18;
+    -webkit-transition: opacity .2s ease-in !important;
+    transition: opacity .2s ease-in !important;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+}
+/*Login nav*/
+.badge-redirected{
+  position: absolute;
+  left: -31px;
+  padding: 0px 4px;
+  top: 8px;
+  width: 111px;
+  height: 33px;
+  line-height: 29px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-41deg);
+  background-color: #269aff;
+  color: #fff !important;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.badge-used-redirected{
+  background-color: #269aff;
+}
+.badge-deal-redirected{
+  background-color: red;
+}
+.badge-new-redirected{
+  background-color: orange;
+}
+
+div#map{
+  display: block;
+  box-sizing: border-box;
+}
+._nav-top-info{
+  font-size: 13px;
+  display: inline-block;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 30px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+img.user-face{
+  width: 43px;
+  height: 43px;
+  border: 2px white solid;
+  padding: 6px;
+  border-radius: 21px;        
+}
+.navbar-dark .navbar-nav .nav-link{
+  color: white;
+  text-decoration: none;
+}
+.navbar-dark .navbar-nav .nav-link:hover{
+  color: #fa9539;
+  text-decoration: none;
+}
+a {
+  color: white;  
+  font-weight: 400;
+  text-decoration: none;        
+}
+a:hover {
+  color: #fa9539;  
+  text-decoration: none;
+}
+/*Header*/
+.up-user-face{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.actionNew:hover{
+  color: white;
+  box-shadow: 4px 3px #f17f18;
+  font-weight: 200;
+}
+.actionNew{
+  border: 2px #f17f18 solid;
+  background: #fa9539;
+  padding: 5px;
+  font-weight: 300;
+  border-radius: 5px;
+  box-shadow: 3px 2px #f17f18;
+}
+/*Map*/
+.mapContainer{
+  height: 480px;
+}
+#map{
+  position: relative;
+  width: 100% !important;
+  height: inherit;
+  z-index: 0;
+}
+/*SearchTab*/
+._tab-search{
+  position: absolute;
+  margin-top: -5%;
+  margin-left: 100px;
+}
+
+
+.nav-tabs .nav-link {
+  padding: 20px;
+  border: none;
+}
+.nav-tabs .nav-link.active {
+  background: #343a40;
+  color: white;
+}
+#myTabContent{
+  background: #343a40;
+  padding: 30px;
+}
+/*Car Listing*/
+.car-card{
+  border: 1px solid #e9e6e0;
+  padding: 0px !important;
+  height: auto;
+  width: 97%;
+  margin-right: 5px;
+}
+.container-video{
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  position: relative;
+}
+.header-video{
+  overflow: hidden;
+  position: relative;
+}
+.header-video ul{
+  margin: 0px !important;
+  list-style: none;
+  padding: 0px;
+  right: 0;
+  float: right;
+  position: absolute;
+}
+.header-video ul li{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 1px;
+}
+.header-video ul li a{
+  padding: 5px;
+  border: 1px rgba(0, 0, 0, 0.3) solid;
+  width: fit-content;
+  border-radius: 20px 20px;
+  background: rgba(0, 0, 0, 0.3);
+}
+.car-content-card{
+  width: 100%;
+  display: block;
+  height: fit-content;
+}
+.car-info-card{
+  height: 73px;
+  padding: 10px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.car-location{
+  width: 100%;
+  padding: 10px;
+  font-size: 13px;
+  height: inherit;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  color: #3e3c3cd9;
+}
+.car-location span{
+  color: gray;
+  opacity: 0.6;
+}
+.car-title{
+  float: left;
+  width: 63%;
+}
+.price-tag{
+  color: white;
+  background: #fc9632;
+  padding: 7px 7px 7px 7px;
+}
+.car-footer-card{
+  color: #808080de;
+  border-top: 1px solid #e9e6e0;
+  background: #fcfbf9 none repeat scroll 0 0;
+  padding: 10px;
+}
+iframe{
+  border: none;
+  width: 100%;
+}
+.car-footer-card ul{
+  padding: 3px;
+  margin: 0px !important;
+  list-style: none;
+  width: 100%;
+  height: 34px;
+}
+.car-footer-card ul li{
+  width: 33%;
+  display: block;
+  float: left;
+}
+
+.container-video .row {
+  margin-bottom: 14px;
+}
+
+
+
+/*--------------------------*/
+/*--------------------------*/
+/*--------------------------*/
+footer{
+  height: auto;
+  background: #222222;
+  color: white;  
+  padding-top: 50px !important;
+  padding-bottom: 0px !important;
+}
+.footer-copyright{
+  text-align: center;
+  word-spacing: 5px;
+  padding-top: 20px;
+  height: 67px;
+  margin: auto;
+  width: 100%;
+  background: #333333;
+  border: 2px #333333 solid;
+  box-shadow: -1px -2px 20px 5px black;
+}
+footer .container{
+  margin: auto !important;
+  width: 98%;
+  padding-bottom: 0px !important;
+}
+.footer-social{
+  font-size: 26px;
+}
+.footer-social span{
+  padding: 10px;
+  width: 46px;
+  text-align: center;
+  background-color: #333333!important;
+  margin: 2px;
+}
+.footer-container{
+  width: 90%;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: block;
+  margin-bottom: 22px;
+}
+.footer-h2{
+  margin-bottom: 12px;
+  color: #989898;
+}
+.listing-footer{
+  line-height: 2;
+}
+
+.listing-footer li a{
+  font-size: 17px;
+  font-weight: 100;
+}
+/*--------------------------*/
+/*--------------------------*/
+/*--------------------------*/
+
+@media (max-width: 640px) {
+  ._top-header{
+    display: none;
+  }
+  ._tab-search{
+    position: relative;
+    margin-top: 0px;
+    margin-left:0px;
+  }
+}

@@ -1,0 +1,501 @@
+<%- include( '../partials/head', {title: 'Ajouter une Annonce'} ) %>
+
+
+  <body id="page-top" >
+    <%- include( '../partials/header' ,{user : user}) %>
+
+    <!-- =-=-=-=-=-=-= Breadcrumb End =-=-=-=-=-=-= -->
+    <div class="page-header-area-2 gray">
+       <div class="container">
+          <div class="row">
+             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="small-breadcrumb">
+                   <div class="breadcrumb-link">
+                      <ul>
+                         <li><a href="index.html">Home</a></li>
+                         <li><a class="active" href="#">Publication d'annonce</a></li>
+                      </ul>
+                   </div>
+                   <div class="header-page">
+                      <h1>Postez votre annonce</h1>
+                      <% if  (message != undefined ) { %>
+                        <p class="badge badge-success "><%= message %></p>
+                      <% } %>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>    
+    <!-- =-=-=-=-=-=-= Breadcrumb End =-=-=-=-=-=-= -->
+    <section class="section-padding no-top gray ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-lg-8 col-xs-12 col-sm-12">
+             <!-- end post-padding -->
+             <div class="post-ad-form postdetails">
+                <form class="submit-form" action="/cars/add" method="post">
+                   <!-- Title  -->
+                   <div class="row">
+                      <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+                         <label class="control-label">Titre de l'annonce</label>
+                         <input name="title" class="form-control" placeholder="Brand new honda civic 2017 for sale" type="text">
+                      </div>
+                   </div>
+                   <div class="row">
+                      <!-- Category  -->
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                         <label class="control-label">Maison </label>
+                         <select class="form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true" name="maison">
+                            <option label="BMW">BMW</option>
+                            <option>Honda </option>
+                            <option>Hyundai </option>
+                            <option>Nissan </option>
+                            <option>Mercedes Benz </option>
+                         </select>
+                      </div>
+                      <!-- Price  -->
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                         <label class="control-label">Prix<small>Dirahms Seulement</small></label>
+                         <input class="form-control" placeholder="35 000 DHS" type="text" name="price">
+                      </div>
+                   </div>
+                   <div class="row">
+                      <!-- Category  -->
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                         <label class="control-label">Modèle</label>
+                         <select class="form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true" name="model">
+                            <option label="Sport Car">Sport Car</option>
+                            <option>Sport Car</option>
+                            <option>Compact </option>
+                            <option>Coupe </option>
+                         </select>
+                      </div>
+                      <!-- Price  -->
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                         <label class="control-label">Kilométrage<small>KM seulement</small></label>
+                         <input class="form-control" placeholder="40000" type="text" name="kilometrage">
+                      </div>
+                   </div>
+                   <!-- end row -->
+                   <div class="row">
+                      <!-- Body  -->
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                         <label class="control-label">Type de Carosserie </label>
+                         <select class="form-control select2-hidden-accessible"  name="bodytype" tabindex="-1" aria-hidden="true">
+                            <option label="BMW"></option>
+                            <option>BMW</option>
+                            <option>Honda </option>
+                            <option>Hyundai </option>
+                            <option>Nissan </option>
+                            <option>Mercedes Benz </option>
+                         </select>                            
+                      </div>
+                      <!-- Année Model  -->
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                        <label class="control-label">Année Modéle</label>
+                        <input class="form-control" placeholder="2018" type="calander" name="manufactueyear">
+                      </div>
+                   </div>
+                   <!-- end row -->
+                   <div class="row">
+                      <!-- Body  -->
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                         <label class="control-label">Dédounament Année</label>
+                         <select class="form-control select2-hidden-accessible"  name="dedouanementanne" tabindex="-1" aria-hidden="true">
+                            <option label="2019"></option>
+                            <option>2019</option>
+                            <option>2018</option>
+                            <option>2017</option>
+                            <option>2016</option>
+                            <option>2015</option>
+                         </select>                            
+                      </div>
+                      <!-- Prix Vignette  -->
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                        <label class="control-label">Prix Vignette</label>
+                         <select class="form-control select2-hidden-accessible"  name="prixvignette" tabindex="-1" aria-hidden="true">
+                            <option label="200 - 340"></option>
+                            <option>200 - 340</option>
+                            <option>340 - 540</option>
+                            <option>500 - 640</option>
+                            <option>760 - 890</option>
+                         </select>  
+                      </div>
+                   </div>
+                   <!-- end row -->
+                   <div class="row">
+                      <!-- Category  -->
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                         <label class="control-label">Transmission</label>
+                         <select class="form-control select2-hidden-accessible" name="transmission" tabindex="-1" aria-hidden="true">
+                            <option label="Automatique"></option>
+                            <option>Automatique</option>
+                            <option>Manuel </option>
+                            <option>Semi-Automatique </option>
+                         </select>
+                      </div>
+                      <!-- Price  -->
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                         <label class="control-label">Driving</label>
+                         <select class="form-control select2-hidden-accessible" name="drivetype" tabindex="-1" aria-hidden="true">
+                            <option label="4WD"></option>
+                            <option>4WD</option>
+                            <option>AWD </option>
+                            <option>FWD </option>
+                            <option>RWD </option>
+                         </select>
+                      </div>
+                   </div>
+                   <!-- end row -->
+                   <div class="row">
+                      <!-- PAPIER DE VENTE  -->
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                         <label class="control-label">Papier de vente</label>
+                         <select class="form-control select2-hidden-accessible" name="typepapierdevente" tabindex="-1" aria-hidden="true">
+                            <option label="Automatique"></option>
+                            <option>Automatique</option>
+                            <option>Manuel </option>
+                            <option>Semi-Automatique </option>
+                         </select>
+                      </div>
+                      <!-- Accidentée  -->
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                         <label class="control-label">Accidentée</label>
+                         <select class="form-control select2-hidden-accessible" name="accidente" tabindex="-1" aria-hidden="true">
+                            <option label="Jamais"></option>
+                            <option>Jamais</option>
+                            <option>Une fois </option>
+                            <option>DEUX FOIS </option>
+                            <option>PLUS </option>
+                         </select>
+                      </div>
+                   </div>
+                   <!-- end row -->
+                   <div class="row"> 
+                      <!-- Carburant  -->
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                         <label class="control-label">Carburant</label>
+                         <select class="form-control Gasoil select2-hidden-accessible" name="carburant" tabindex="-1" aria-hidden="true">
+                            <option label="Gasoil"></option>
+                            <option>Gasoil</option>
+                            <option>Essence</option>
+                            <option>Hybrid</option>
+                         </select>
+                      </div> 
+                      <!-- Consomation  -->
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                        <label class="control-label">Consomation <small>%</small> </label>
+                        <input class="form-control" placeholder="Consomation %" type="number" name="consomation">
+                      </div>                      
+                   </div>
+                   <!-- end row -->
+                   <div class="row"> 
+                      <!-- Puissance fiscal  -->
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                        <label class="control-label">Puissance fiscal <small>Nbr de cheveaux</small></label>
+                        <input class="form-control" placeholder="Puissance fiscal" type="number" name="puissancefiscal">
+                      </div>                   
+                   </div>
+                   <!-- end row -->
+
+                   <div class="row">
+                     <label class="control-label">Car Localisation</label>
+                   </div>                   
+                   <div class="row">
+                      <!-- Emplacement  -->
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                         <label class="control-label">Emplaçement </label>
+                         <input class="form-control" placeholder="Entrer une addresse" type="text" id="emplacement" name="emplacement">
+                      </div>
+                      <!-- Latitude  -->
+                      <div class="col-md-3 col-lg-3 col-xs-6 col-sm-6">
+                         <label class="control-label">Latitude<small>Auto Fill </small></label>
+                         <input class="form-control" placeholder="52.4030371" type="text" name="lat" id="latitude" >
+                      </div>
+                      <!-- Longitude  -->
+                      <div class="col-md-3 col-lg-3 col-xs-6 col-sm-6">
+                         <label class="control-label">Longitude<small>Auto Fill </small></label>
+                         <input class="form-control" placeholder="-27.4030371" type="text" name="lng" id="lngitude" >
+                      </div>
+                   </div>                   
+                  <!-- Video YOUTUBE -->
+                  <div class="row">
+                    <div class="stm_add_car_form "> 
+                      <div class="stm-form-4-videos clearfix">
+                          <div class="stm-car-listing-data-single stm-border-top-unit ">
+                              <div class="title heading-font">Add Videos Youtube</div>
+                          </div>
+                          <div class="stm-add-videos-unit">
+                              <div class="row">
+                                  <div class="col-md-6 col-sm-12">
+                                      <div class="stm-video-units">
+                                          <div class="stm-video-link-unit-wrap">
+                                              <div class="heading-font">
+                                                  <span class="video-label">Video link</span> <span class="count">1</span></div>
+                                              <div class="stm-video-link-unit">
+                                                  <input type="text" placeholder="http://youtube.com/embed/XXXXXX" name="stm_video[]" style="width: 100%;margin-bottom: 26px;height: 40px;line-height: 40px;font-size: 14px;">
+                                                  <div class="stm-after-video" style=""></div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 col-sm-12">
+                                      <div class="stm-simple-notice">
+                                          <i class="fa fa-info-circle"></i>
+                                            Si vous n'avez pas les vidéos à portée de main, ne vous inquiétez pas. Vous pouvez les ajouter ou les modifier après avoir terminé votre annonce en utilisant la page "Gérer vos annonce".                   
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+                   <!-- Image Upload  -->
+                   <div class="row">
+                      <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+                         <label class="control-label">Selectionner les options supplimentaires de votre véhicule</label>
+                         <!-- Brands List -->                    
+                         <div class="skin-minimal">
+                            <ul class="list row">
+                               <li class="col-md-4 col-sm-6 col-xs-12">
+                                  <div class="" style="position: absolute;">
+                                    <input type="checkbox" id="minimal-checkbox-1" name="check_alloywheels" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+                                  </div>
+                                  <label for="minimal-checkbox-1"  style="margin-left: 20px;">Roues en alliage </label>
+                               </li>
+                               <li class="col-md-4 col-sm-6 col-xs-12">
+                                  <div class="" style="position: absolute;">
+                                    <input type="checkbox" id="minimal-checkbox-2"  name="check_abs" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+                                  </div>
+                                  <label for="minimal-checkbox-2"  style="margin-left: 20px;">ABS </label>
+                               </li>
+                               <li class="col-md-4 col-sm-6 col-xs-12">
+                                  <div class="" style="position: absolute;">
+                                    <input type="checkbox" id="minimal-checkbox-4"  name="check_airconditiong"  style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+                                  </div>
+                                  <label for="minimal-checkbox-4"  style="margin-left: 20px;">Climatisation</label>
+                               </li>
+                               <li class="col-md-4 col-sm-6 col-xs-12">
+                                  <div class="" style="position: absolute;">
+                                    <input type="checkbox" id="minimal-checkbox-5"  name="check_cdplayer"  style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+                                  </div>
+                                  <label for="minimal-checkbox-5"  style="margin-left: 20px;">CD Player</label>
+                               </li>
+                               <li class="col-md-4 col-sm-6 col-xs-12">
+                                  <div class="" style="position: absolute;">
+                                    <input type="checkbox" id="minimal-checkbox-6"  name="check_coolbox"  style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+                                  </div>
+                                  <label for="minimal-checkbox-6"  style="margin-left: 20px;">Glacière</label>
+                               </li>
+                               <li class="col-md-4 col-sm-6 col-xs-12">
+                                  <div class="" style="position: absolute;">
+                                    <input type="checkbox" id="minimal-checkbox-7"  name="check_amfmradio"  style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+                                  </div>
+                                  <label for="minimal-checkbox-7"  style="margin-left: 20px;">AM/FM Radio</label>
+                               </li>
+                               <li class="col-md-4 col-sm-6 col-xs-12">
+                                  <div class="" style="position: absolute;">
+                                    <input type="checkbox" id="minimal-checkbox-8"  name="check_bonnetprotector"  style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+                                  </div>
+                                  <label for="minimal-checkbox-8" style="margin-left: 20px;">Bonnet Protector</label>
+                               </li>
+                               <li class="col-md-4 col-sm-6 col-xs-12">
+                                  <div class="" style="position: absolute;">
+                                    <input type="checkbox" id="minimal-checkbox-9"  name="check_powersteering"  style="display: none;position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+
+                                  </div>
+                                  <label for="minimal-checkbox-9"  style="margin-left: 20px;">Assistée</label>
+                               </li>
+                               <li class="col-md-4 col-sm-6 col-xs-12">
+                                  <div class="" style="position: absolute;">
+                                    <input type="checkbox" id="minimal-checkbox-3"  name="check_airbags"  style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+                                  </div>
+                                  <label for="minimal-checkbox-3"  style="margin-left: 20px;">Sacs gonflables (Airbags)</label>
+                               </li>
+                            </ul>
+                         </div>
+                         <!-- Brands List End -->  
+                      </div>
+                   </div>
+                   <!-- end row -->
+                   <!-- Image Upload  -->
+                   <div class="row">
+                      <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+                         <label class="control-label">Photos pour votre annonce<small>Veuillez ajouter des images de votre annonce. (350x450)</small></label>
+                         <div id="dropzone" class="dropzone dz-clickable"><div class="dz-default dz-message"><span>Déposer des fichiers ici pour télécharger</span></div></div>
+                      </div>
+                   </div>
+                   <!-- end row -->
+                   <!-- Ad Description  -->
+                   <div class="row">
+                      <div class="col-md-12 col-lg-12 col-xs-12  col-sm-12">
+                         <label class="control-label">Description Annonce<small>Entrez une description longue pour votre annonce</small></label>
+                         <textarea name="description"rows="12" class="form-control" placeholder="Votre discription içi.." >
+                         </textarea>
+                      </div>
+                   </div>
+
+                   <!-- end row -->
+                   <!-- Ad Tags  -->
+                   <div class="row">
+                      <div class="col-md-12 col-lg-12 col-xs-12  col-sm-12">
+                         <label class="control-label">Annonce Tags </label>
+                         <input class="form-control" name="tags" id="tags" value="honda ,honda civic,sport car" data-tagsinput-init="true" style="display: none;"><div id="tags_tagsinput" class="tagsinput" style="width: 100%; min-height: 100px; height: 100px;"><span class="tag"><span>honda&nbsp;&nbsp;</span><a href="#" title="Removing tag">x</a></span><span class="tag"><span>honda civic&nbsp;&nbsp;</span><a href="#" title="Removing tag">x</a></span><span class="tag"><span>sport car&nbsp;&nbsp;</span><a href="#" title="Removing tag">x</a></span><div id="tags_addTag"><input id="tags_tag" value="" data-default="add a tag" style="color: rgb(102, 102, 102); width: 68px;"></div><div class="tags_clear"></div></div>
+                      </div>
+                   </div>
+                   <!-- end row -->
+                   <!-- Ad Type  -->
+                   <div class="row">
+                      <!-- Ad Condition  -->
+                      <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+                         <label class="control-label">Conditions<small>Objet Condition</small></label>
+                         <div class="skin-minimal">
+                            <ul class="list">
+                               <li>
+                                  <div >
+                                    <input type="radio" id="new" name="radio-new" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+                                  </div>
+                                  <label for="new">New</label>
+                               </li>
+                               <li>
+                                  <div >
+                                    <input type="radio" id="used" name="radio-new" >
+                                  </div>
+                                  <label for="used">Used</label>
+                               </li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                   <!-- end row -->
+                   <div class="row">
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                         <label class="control-label">Votre nom</label>
+                         <input class="form-control" placeholder="eg John Doe" type="text" name="name">
+                      </div>
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                         <label class="control-label">Votre Email<small>où vous recevez vos emails</small></label>
+                         <input class="form-control" placeholder="contact@scriptsbundle.com" type="email" name="email">
+                      </div>
+                   </div>
+                   <!-- end row -->
+                   <div class="row">
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                         <label class="control-label">Numéro de téléphone<small>Numéro de confirmation</small></label>
+                         <input class="form-control" placeholder="eg +92-0321-123-456-789" type="tel" name="phone">
+                      </div>
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                         <label class="control-label">Adresse<small>Votre adresse fixe</small></label>
+                         <input class="form-control" placeholder="eg House no 8 Streent no 2 New York" type="text" name="address">
+                      </div>
+                   </div>
+                   <button class="btn btn-theme pull-right" style="    color: #ffffff;background-color: #fc9632;border-color: #fc9632;">Publier mon Annonce</button>
+                </form>
+             </div>
+             <!-- end post-ad-form-->
+          </div>
+          <!-- end col -->
+          <!-- Right Sidebar -->
+          <div class="col-md-4 col-xs-12 col-sm-12">
+             <!-- Sidebar Widgets -->
+             <div class="blog-sidebar">
+                <!-- Categories --> 
+                <div class="widget">
+                   <div class="widget-heading">
+                      <h4 class="panel-title"><a>Conseils d'utilisation' </a></h4>
+                   </div>
+                   <div class="widget-content">
+
+                      <p class = "lead"> Afficher une annonce sur <a href="#" style="color: #ff9800;"> VIDOR.ma </a> est gratuit! Cependant, toutes les annonces doivent respecter nos règles: </ p>
+                      <ol>
+                         <li> Assurez-vous de poster dans la bonne catégorie. </ li>
+                         <li> Ne postez pas la même annonce plus d'une fois ni ne republiez-la dans les 48 heures. </ li>
+                         <li> Ne téléchargez pas d'images avec des filigranes. </ li>
+                         <li> Ne postez pas d'annonces contenant plusieurs éléments, sauf s'il s'agit d'un package. </ li>
+                         <li> Ne mettez pas votre adresse électronique ou vos numéros de téléphone dans le titre ou la description. </ li>
+                         <li> Assurez-vous de poster dans la bonne catégorie. </ li>
+                         <li> Ne postez pas la même annonce plus d'une fois ni ne republiez-la dans les 48 heures. </ li>
+                         <li> Ne téléchargez pas d'images avec des filigranes. </ li>
+                         <li> Ne postez pas d'annonces contenant plusieurs éléments, sauf s'il s'agit d'un package. </ li>
+                      </ ol>
+                   </div>
+                </div>
+                <!-- Latest News --> 
+             </div>
+             <!-- Sidebar Widgets End -->
+          </div>
+          <!-- Middle Content Area  End --><!-- end col -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="../js/scrolling-nav.js"></script>
+    <script src="../js/jquery.tagsinput.min.js"></script>
+    <script src="../js/dropzone.js"></script>
+    <script src="../js/form-dropzone.js"></script>
+    <script src="../js/select2.min.js"></script>
+    <script src="../js/icheck.min.js"></script>
+    <script src="../js/wow.js"></script>
+    <script src="../js/imagesloaded.js"></script>
+    <script src="../js/custom.js"></script>
+
+    <!-- Google Map  -->
+    <script type="text/javascript">
+      $('.up-user-face').on('click',function(){
+        if (!$('.login-nav').is(':visible')) {
+
+          $(this).children().css('background',' #fc9632')
+          $('.login-nav').show();
+        }else{
+          $(this).children().css('background','transparent')
+          $('.login-nav').hide();
+        }
+      });
+
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      $('#emplacement').on('change',function(){
+        var input = document.getElementById('emplacement');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+
+
+        // Set the data fields to return when the user selects a place.
+        autocomplete.setFields(
+            ['address_components', 'geometry', 'icon', 'name']);
+
+        autocomplete.setTypes(['address']);
+
+        autocomplete.addListener('place_changed', function() {
+          var place = autocomplete.getPlace();
+          $("input#latitude")[0].value = place.geometry.location.lat();
+          $("input#lngitude")[0].value = place.geometry.location.lng();
+        });
+      });
+
+
+
+    </script>
+  </body>
+
+</html>

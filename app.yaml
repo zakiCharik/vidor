@@ -1,0 +1,9 @@
+runtime: nodejs8
+
+env_variables:
+    GOOGLE_APPLICATION_CREDENTIALS: ./bin/buysellcar.json
+	GOOGLE_DB_HOST:localhost
+	GOOGLE_DB_USER:root
+	GOOGLE_DB_PASSWORD:root
+	GOOGLE_DB_DATABASE:db_vedor
+	GOOGLE_DB_SPCKET_PATH:/Applications/MAMP/tmp/mysql/mysql.sock

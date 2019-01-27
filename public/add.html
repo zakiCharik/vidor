@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Scrolling Nav - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- fontawesome core CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+    <link href="css/costume.css" rel="stylesheet">
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
+    <style type="text/css">
+
+    </style>
+  </head>
+
+  <body id="page-top" onload="initMap()">
+
+    <!-- head nav  -->
+    <div class="_top-header" style="background-color: #454d56fc;">
+      <div class="col sm-only _nav-top-info" >
+        <div class="left" style="padding: 12px;float: left;word-spacing: 9px;display: inline-flex;">
+          <div class="dropdown" style="margin-left : 3px; margin-right : 5px; ">
+            <a href="" class="dropdown-toggle" type="button" id="dropdownMenuLANGAGE" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ENGLISH</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLANGAGE">
+              <a class="dropdown-item" href="#">FRENCH</a>
+              <a class="dropdown-item" href="#">ARABIC</a>
+            </div>
+          </div>  
+          <div class="dropdown" style="margin-left : 5px; margin-right : 3px; ">
+            <a href="" class="dropdown-toggle" type="button" id="dropdownMenuCURRENCY" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CURRENCY (MAD)</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuCURRENCY">
+              <a class="dropdown-item" href="#">DIRHAMS MAD</a>
+              <a class="dropdown-item" href="#">US DOLLAR USD</a>
+              <a class="dropdown-item" href="#">EURO </a>
+            </div>
+          </div>          
+        </div>
+        <div class="social" style="float: right;word-spacing: 5px; padding: 12px;">
+
+           <a href="">
+            HELP
+           </a>
+           <span style="color: white;">|</span>
+           <a href="">
+            ABOUTS US
+           </a> 
+           <span style="color: white;">|</span>
+           <a href="" style="margin-right: 15px;">
+            CONTACT US
+           </a> 
+
+          <a href="" style=" padding-left: 5px;padding-right: 5px;">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" style=" padding-left: 5px;padding-right: 5px;">
+            <i class="fab fa-facebook"></i>
+          </a> 
+          <a href="" style=" padding-left: 5px;padding-right: 5px;">
+            <i class="fab fa-youtube"></i>
+          </a> 
+          <a href="" style=" padding-left: 5px;padding-right: 5px;">
+            <i class="fab fa-google"></i>
+          </a> 
+        </div> 
+      </div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav" >
+      <div class="container" style="margin: 0px; width: 100%;">
+        <a class="navbar-brand  js-scroll-trigger" href="#page-top">
+          <img src="img/logo.svg" width="230" height="50" class="d-inline-block align-top" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto" style="margin-left: 20px !important;word-spacing: 16px;">
+            <li class="nav-item">
+              <a class="nav-link">
+                HOME
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">
+                NEW
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">
+                INVENTORY
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">
+                PRO
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">
+                PRICING
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div style="postion: relative;">
+
+        <a href="#" class="up-user-face">
+          <img src="img/faces.jpg" class="user-face">
+        </a> 
+        <div class="login-nav">
+          <form method="post">
+              <div class="form-group">
+                <h4 style="font-size: 14px;">Login or E-mail</h4>
+                <input type="text" name="stm_user_login" autocomplete="off" placeholder="Enter login or E-mail" style="    padding-left: 8px;height: 40px;line-height: 40px;">
+              </div>
+
+              <div class="form-group">
+                <h4 style="font-size: 14px;">Password</h4>
+                <input type="password" name="stm_user_password" autocomplete="off" placeholder="Enter password" style="    padding-left: 8px;height: 40px;line-height: 40px;">
+              </div>
+
+              <div class="form-group form-checker">
+                <label style="float: left;display: inline; width: 100%;">
+                  <div class="checker">
+                    <span style="float: left;margin-bottom: 10px;">
+                      <input type="checkbox" name="stm_remember_me" style="opacity: 1;filter: alpha(opacity=0);-moz-opacity: 0;border: none;background: none;display: -moz-inline-box;display: inline-block;*display: inline;zoom: 1;">
+                    </span>
+                  </div>
+                  <span style="padding: 10px;">Remember me</span>
+                </label>
+              </div>
+              <span class="stm-listing-loader"><i class="stm-icon-load1"></i></span>
+              <a href="h" class="logBtn" style="">Login</a>
+              <a href="h" class="logBtn" style="background: transparent; color: #f17f18 !important;">Sign Up</a>
+              <div class="stm-validation-message"></div>
+          </form>
+        </div>  
+      </div>    
+      <a href="#" class="actionNew">
+          <div style="padding: 2px;">
+            <i class="fa fa-car" style="font-size: 20px;margin-right: 7px;"></i>
+            Add your ads           
+          </div>
+      </a>      
+    </nav>  
+
+    <!-- Map div  -->
+    <div class="">
+      <div class="mapContainer text-center" >
+        <div id="map" ></div>
+      </div>
+      <!-- Tab search div  -->
+      <div class="_tab-search">
+        <ul class="nav nav-tabs" id="myTab" role="tablist" style="width: fit-content;background: #464f57;border: none;">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">FIND BY INFO CAR</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">FIND BY PRICE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">FIND IN YOUR LOCATION</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent" >
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <form>
+              <div class="form-row align-items-center">
+                <div class="col-auto">
+                  <label class="sr-only" for="inlineFormInput">CHOOSE BODY</label>
+                  <input type="text" class="form-control mb-2" id="inlineFormInput1" placeholder="CHOOSE BODY" style="height: 48px;border: none;border-radius: 0;background-color: #eceff3;outline: none !important;">
+                </div>
+                <div class="col-auto">
+                  <label class="sr-only" for="inlineFormInput">CHOOSE MODEL</label>
+                  <input type="text" class="form-control mb-2" id="inlineFormInput2" placeholder="CHOOSE MODEL" style="height: 48px;border: none;border-radius: 0;background-color: #eceff3;outline: none !important;">
+                </div>
+                <div class="col-auto">
+                  <label class="sr-only" for="inlineFormInput">CHOOSE CONDIITONS</label>
+                  <input type="text" class="form-control mb-2" id="inlineFormInput3" placeholder="CHOOSE CONDIITONS" style="height: 48px;border: none;border-radius: 0;background-color: #eceff3;outline: none !important;">
+                </div>
+                <div class="col-auto">
+                  <button type="submit" class="btn btn-primary mb-2" style="margin-left: 10px;min-width: 170px;padding: 16px 25px 13px 25px;font-weight: 700;background: #fa9539;border: #fa9539;">
+                    <i class="fa fa-search"></i>
+                    SEARCH
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <div class="dropdown" style="margin-left : 5px; margin-right : 3px; ">
+              <a style="color: gray; text-decoration: underline" class="dropdown-toggle" type="button" id="dropdownMenuCURRENCY" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Advanced search</a>
+            </div> 
+          </div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+        </div>
+      </div>      
+    </div>
+
+    <!-- LIST SECTION / -->
+    <section id="list">
+      <div class="container-video" >
+        <h2>Latest Premium <span style="color:#fa9539">Cars</span></h2>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+        <div class="row">
+          <div class="col-lg-3 ">
+            <div class="car-card">
+              <div class="header-video">
+                <ul>
+                  <li>
+                    <a class="orange">
+                      <i class="fa fa-star"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="red">
+                      <i class="fa fa-heart"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="green">
+                      <i class="fa fa-phone"></i>
+                    </a>
+                  </li>
+                </ul>
+                <span class="badge-redirected  badge-used-redirected">USED</span>
+                <iframe src="https://www.youtube.com/embed/O6Uj5EySGug?controls=2"></iframe>
+              </div>
+              <div class="car-content-card">
+                <div class="car-info-card">
+                  <span class="car-title">BMW 535I, NAVI, LEATHER, ABS</span>
+                  <span class="price-tag badge-used-redirected">180 000 DHS</span>
+                </div>
+                <div class="car-location">
+                  <i class="fa fa-map-marker"></i><span> Model Town Link Road London</span>
+                </div>
+                <div class="car-footer-card">
+                  <ul>
+                    <li>
+                      <i class="fa fa-road"></i>
+                      <span>18000</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-gas-pump"></i>
+                      <span>15/18</span>
+                    </li>
+                    <li>
+                      <i class="fab fa-gitter"></i>
+                      <span>Automatic</span>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-3 ">
+            <div class="car-card">
+              <div class="header-video">
+                <ul>
+                  <li>
+                    <a class="orange">
+                      <i class="fa fa-star"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="red">
+                      <i class="fa fa-heart"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="green">
+                      <i class="fa fa-phone"></i>
+                    </a>
+                  </li>
+                </ul>
+                <span class="badge-redirected  badge-new-redirected">NEW</span>
+                <iframe src="https://www.youtube.com/embed/O6Uj5EySGug?controls=2"></iframe>
+              </div>
+              <div class="car-content-card">
+                <div class="car-info-card">
+                  <span class="car-title">BMW Car</span>
+                  <span class="price-tag">180 000 DHS</span>
+                </div>
+                <div class="car-location">
+                  <i class="fa fa-map-marker"></i><span> Model Town Link Road London</span>
+                </div>
+                <div class="car-footer-card">
+                  <ul>
+                    <li>
+                      <i class="fa fa-road"></i>
+                      <span>18000</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-gas-pump"></i>
+                      <span>15/18</span>
+                    </li>
+                    <li>
+                      <i class="fab fa-gitter"></i>
+                      <span>Automatic</span>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-3 ">
+            <div class="car-card">
+              <div class="header-video">
+                <ul>
+                  <li>
+                    <a class="orange">
+                      <i class="fa fa-star"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="red">
+                      <i class="fa fa-heart"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="green">
+                      <i class="fa fa-phone"></i>
+                    </a>
+                  </li>
+                </ul>
+                <iframe src="https://www.youtube.com/embed/w16HRMxXJTs?controls=2"></iframe>
+              </div>
+              <div class="car-content-card">
+                <div class="car-info-card">
+                  <span class="car-title">NEW TOYOTA CAMRY 2018</span>
+                  <span class="price-tag">180 000 DHS</span>
+                </div>
+                <div class="car-location">
+                  <i class="fa fa-map-marker"></i><span> Model Town Link Road London</span>
+                </div>
+                <div class="car-footer-card">
+                  <ul>
+                    <li>
+                      <i class="fa fa-road"></i>
+                      <span>18000</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-gas-pump"></i>
+                      <span>15/18</span>
+                    </li>
+                    <li>
+                      <i class="fab fa-gitter"></i>
+                      <span>Automatic</span>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-3 ">
+            <div class="car-card">
+              <div class="header-video">
+                <ul>
+                  <li>
+                    <a class="orange">
+                      <i class="fa fa-star"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="red">
+                      <i class="fa fa-heart"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="green">
+                      <i class="fa fa-phone"></i>
+                    </a>
+                  </li>
+                </ul>
+                <span class="badge-redirected badge-deal-redirected">DEAL</span>
+                <iframe src="https://www.youtube.com/embed/k2DkGsShamY?controls=2"></iframe>
+              </div>
+              <div class="car-content-card">
+                <div class="car-info-card">
+                  <span class="car-title">Audi A4 Quattro Premium GT</span>
+                  <span class="price-tag">180 000 DHS</span>
+                </div>
+                <div class="car-location">
+                  <i class="fa fa-map-marker"></i><span> Model Town Link Road London</span>
+                </div>
+                <div class="car-footer-card">
+                  <ul>
+                    <li>
+                      <i class="fa fa-road"></i>
+                      <span>18000</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-gas-pump"></i>
+                      <span>15/18</span>
+                    </li>
+                    <li>
+                      <i class="fab fa-gitter"></i>
+                      <span>Automatic</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>        
+        <div class="row">
+          <div class="col-lg-3 ">
+            <div class="car-card">
+              <div class="header-video">
+                <ul>
+                  <li>
+                    <a class="orange">
+                      <i class="fa fa-star"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="red">
+                      <i class="fa fa-heart"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="green">
+                      <i class="fa fa-phone"></i>
+                    </a>
+                  </li>
+                </ul>
+                <span class="badge-redirected  badge-used-redirected">USED</span>
+                <iframe src="https://www.youtube.com/embed/O6Uj5EySGug?controls=2"></iframe>
+              </div>
+              <div class="car-content-card">
+                <div class="car-info-card">
+                  <span class="car-title">BMW 535I, NAVI, LEATHER, ABS</span>
+                  <span class="price-tag badge-used-redirected">180 000 DHS</span>
+                </div>
+                <div class="car-location">
+                  <i class="fa fa-map-marker"></i><span> Model Town Link Road London</span>
+                </div>
+                <div class="car-footer-card">
+                  <ul>
+                    <li>
+                      <i class="fa fa-road"></i>
+                      <span>18000</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-gas-pump"></i>
+                      <span>15/18</span>
+                    </li>
+                    <li>
+                      <i class="fab fa-gitter"></i>
+                      <span>Automatic</span>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-3 ">
+            <div class="car-card">
+              <div class="header-video">
+                <ul>
+                  <li>
+                    <a class="orange">
+                      <i class="fa fa-star"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="red">
+                      <i class="fa fa-heart"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="green">
+                      <i class="fa fa-phone"></i>
+                    </a>
+                  </li>
+                </ul>
+                <span class="badge-redirected  badge-new-redirected">NEW</span>
+                <iframe src="https://www.youtube.com/embed/O6Uj5EySGug?controls=2"></iframe>
+              </div>
+              <div class="car-content-card">
+                <div class="car-info-card">
+                  <span class="car-title">BMW Car</span>
+                  <span class="price-tag">180 000 DHS</span>
+                </div>
+                <div class="car-location">
+                  <i class="fa fa-map-marker"></i><span> Model Town Link Road London</span>
+                </div>
+                <div class="car-footer-card">
+                  <ul>
+                    <li>
+                      <i class="fa fa-road"></i>
+                      <span>18000</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-gas-pump"></i>
+                      <span>15/18</span>
+                    </li>
+                    <li>
+                      <i class="fab fa-gitter"></i>
+                      <span>Automatic</span>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-3 ">
+            <div class="car-card">
+              <div class="header-video">
+                <ul>
+                  <li>
+                    <a class="orange">
+                      <i class="fa fa-star"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="red">
+                      <i class="fa fa-heart"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="green">
+                      <i class="fa fa-phone"></i>
+                    </a>
+                  </li>
+                </ul>
+                <iframe src="https://www.youtube.com/embed/w16HRMxXJTs?controls=2"></iframe>
+              </div>
+              <div class="car-content-card">
+                <div class="car-info-card">
+                  <span class="car-title">NEW TOYOTA CAMRY 2018</span>
+                  <span class="price-tag">180 000 DHS</span>
+                </div>
+                <div class="car-location">
+                  <i class="fa fa-map-marker"></i><span> Model Town Link Road London</span>
+                </div>
+                <div class="car-footer-card">
+                  <ul>
+                    <li>
+                      <i class="fa fa-road"></i>
+                      <span>18000</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-gas-pump"></i>
+                      <span>15/18</span>
+                    </li>
+                    <li>
+                      <i class="fab fa-gitter"></i>
+                      <span>Automatic</span>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-3 ">
+            <div class="car-card">
+              <div class="header-video">
+                <ul>
+                  <li>
+                    <a class="orange">
+                      <i class="fa fa-star"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="red">
+                      <i class="fa fa-heart"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="green">
+                      <i class="fa fa-phone"></i>
+                    </a>
+                  </li>
+                </ul>
+                <span class="badge-redirected badge-deal-redirected">DEAL</span>
+                <iframe src="https://www.youtube.com/embed/k2DkGsShamY?controls=2"></iframe>
+              </div>
+              <div class="car-content-card">
+                <div class="car-info-card">
+                  <span class="car-title">Audi A4 Quattro Premium GT</span>
+                  <span class="price-tag">180 000 DHS</span>
+                </div>
+                <div class="car-location">
+                  <i class="fa fa-map-marker"></i><span> Model Town Link Road London</span>
+                </div>
+                <div class="car-footer-card">
+                  <ul>
+                    <li>
+                      <i class="fa fa-road"></i>
+                      <span>18000</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-gas-pump"></i>
+                      <span>15/18</span>
+                    </li>
+                    <li>
+                      <i class="fab fa-gitter"></i>
+                      <span>Automatic</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mb-2" style="margin-left: 44%;min-width: 170px;padding: 16px 25px 13px 25px;font-weight: 700;background: #fa9539;border: #fa9539;">
+          <i class="fa fa-plus"></i>
+          SHOW ALL
+        </button>        
+      </div>
+    </section>
+    <!--  OUR SERVICE /-->
+    <section class="section-padding-120 our-services">
+        <!--Image One-->
+        <div class="background-1"></div>
+        <!--Image Two-->
+        <div class="background-2"></div>
+        <img class="img-responsive wow slideInRight custom-img animated" data-wow-delay="0ms" data-wow-duration="2000ms" src="http://templates.scriptsbundle.com/carspot/demos/images/sell-1.png" alt="" style="visibility: visible; animation-duration: 2000ms; animation-delay: 0ms; animation-name: slideInRight;">
+        <div class="container">
+           <div class="row clearfix">
+              <!--Left Column-->
+              <div class="left-column col-lg-4 col-md-4 col-md-12">
+                 <div class="inner-box">
+                    <h2>Our Services</h2>
+                    <div class="text">A shadowy flight into the dangerous world of a man who does not exist. Flying away on a wing and a prayer. Who could it be. Believe it or not its just me. Movin' on up to the east side. We finally got a piece of the pie.</div>
+                 </div>
+              </div>
+              <!--Transparent Column-->
+              <div class="service-column col-lg-8 col-md-12">
+                 <div class="inner-box wow fadeInRight animated animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInRight;">
+                    <div class="row clearfix">
+                       <!--Icon Column-->
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div class="services-grid-3">
+                             <div class="content-area">
+                                <h1>01.</h1>
+                                <a href="">
+                                   <h4>Engine Diagnostic</h4>
+                                </a>
+                                <p>We have the right caring, experience and dedicated professional for you.</p>
+                                <div class="service-icon">
+                                   <i class="flaticon-car-wash-1"></i>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                       <!--Icon Column-->
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div class="services-grid-3">
+                             <div class="content-area">
+                                <h1>02.</h1>
+                                <a href="">
+                                   <h4>Wheel Alignment</h4>
+                                </a>
+                                <p>We have the right caring, experience and dedicated professional for you.</p>
+                                <div class="service-icon">
+                                   <i class="flaticon-car-wash-1"></i>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                       <!--Icon Column-->
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div class="services-grid-3">
+                             <div class="content-area">
+                                <h1>03.</h1>
+                                <a href="">
+                                   <h4>Oil Changing</h4>
+                                </a>
+                                <p>We have the right caring, experience and dedicated professional for you.</p>
+                                <div class="service-icon">
+                                   <i class="flaticon-car-wash-1"></i>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                       <!--Icon Column-->
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div class="services-grid-3">
+                             <div class="content-area">
+                                <h1>04.</h1>
+                                <a href="">
+                                   <h4>Brake Reparing</h4>
+                                </a>
+                                <p>We have the right caring, experience and dedicated professional for you.</p>
+                                <div class="service-icon">
+                                   <i class="flaticon-car-wash-1"></i>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+    </section>
+
+    <div class="app-download-section style-2">
+      <!-- app-download-section-wrapper -->
+      <div class="app-download-section-wrapper">
+         <!-- app-download-section-container -->
+         <div class="app-download-section-container">
+            <!-- container -->
+            <div class="container">
+               <!-- row -->
+               <div class="row">
+                  <div class="col-md-6 col-sm-6">
+                     <div class="mobile-image-content">
+                      <img src="img/capMobile.png" style="width: 176px;height: 351px;left: 166px;top: 29px;">
+                      <img src="img/hand.png" alt=""> </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                     <div class="app-text-section">
+                        <h5>Download our app</h5>
+                        <h3>Get Our App For Your Mobile</h3>
+                        <ul>
+                           <li>Find nearby cars in your network with Scholar</li>
+                           <li>Browse real hirers reviews to know why choose Scholar</li>
+                           <li>Rent a car so easy with a tap !</li>
+                           <li>Rent a car so easy with a tap !</li>
+                        </ul>
+                        <div class="app-download-btn">
+                           <div class="row">
+                              <div class="col-md-6 col-sm-6">
+                                 <!-- Windows Store -->
+                                 <a href="#" title="Windows Store" class="btn app-download-button">
+                                 <span class="app-store-btn">
+                                 <i class="fa fa-windows"></i>
+                                 <span>
+                                 <span>Download From</span>
+                                 <span>Windows Store </span>
+                                 </span>
+                                 </span>
+                                 </a>
+                                 <!-- /Windows Store -->
+                              </div>
+                              <div class="col-md-6 col-sm-6">
+                                 <!-- Windows Store -->
+                                 <a href="#" title="Windows Store" class="btn app-download-button"> <span class="app-store-btn">
+                                 <i class="fa fa-apple"></i>
+                                 <span>
+                                 <span>Download From</span> <span>Apple Store </span> </span>
+                                 </span>
+                                 </a>
+                                 <!-- /Windows Store -->
+                              </div>
+                              <!-- Windows Store -->
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- /row -->
+            </div>
+            <!-- /container -->
+         </div>
+         <!-- /app-download-section-container -->
+      </div>
+      <!-- /download-section-wrapper -->
+    </div>
+ 
+    <section id="services" class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Services we offer</h2>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Contact us</h2>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="js/scrolling-nav.js"></script>
+
+    <!-- Google Map  -->
+    <script type="text/javascript">
+      $('.up-user-face').on('click',function(){
+        if (!$('.login-nav').is(':visible')) {
+
+          $(this).children().css('background',' #fc9632')
+          $('.login-nav').show();
+        }else{
+          $(this).children().css('background','transparent')
+          $('.login-nav').hide();
+        }
+      });
+
+
+      function initMap() {
+          // var location;
+          // navigator.geolocation.getCurrentPosition(function(position){ 
+          //   var currentLatitude = position.coords.latitude;
+          //   var currentLongitude = position.coords.longitude;
+          //   location = new google.maps.LatLng(currentLatitude, currentLongitude);
+          // });
+    
+
+          var location = new google.maps.LatLng(50.0875726, 14.4189987);
+
+          var mapCanvas = document.getElementById('map');
+
+          var mapOptions = {
+              center: location,
+              zoom: 16,
+              panControl: true,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+          }
+          var map = new google.maps.Map(mapCanvas, mapOptions);
+
+
+          var markerImage = {
+              url: 'img/marker.png', // url
+              scaledSize: new google.maps.Size(50, 50), // scaled size
+              origin: new google.maps.Point(0,0), // origin
+              anchor: new google.maps.Point(0, 0) // anchor
+          };
+          var marker = new google.maps.Marker({
+              position: location,
+              map: map,
+              icon: markerImage
+          });
+
+          var contentString = '<div class="info-window">' +
+                  '<h3>Our new cars</h3>' +
+                  '<div class="info-content">' +
+                  '<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>' +
+                  '</div>' +
+                  '</div>';
+
+          var infowindow = new google.maps.InfoWindow({
+              content: contentString,
+              maxWidth: 400
+          });
+
+          marker.addListener('click', function () {
+              infowindow.open(map, marker);
+          });
+          var mapCanvas = document.getElementById('map').style.display = "";
+
+      }
+
+
+    </script>
+
+  </body>
+
+</html>

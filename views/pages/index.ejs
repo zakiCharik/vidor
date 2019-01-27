@@ -1,0 +1,584 @@
+<%- include( '../partials/head', {title: 'Home'} ) %>
+
+
+  <body id="page-top" onload="initMap()">
+
+    <!-- head nav  -->
+    <div class="_top-header" style="background-color: #454d56fc;">
+      <div class="col sm-only _nav-top-info" >
+        <div class="left" style="padding: 12px;float: left;word-spacing: 9px;display: inline-flex;">
+          <div class="dropdown" style="margin-left : 3px; margin-right : 5px; ">
+            <a href="" class="dropdown-toggle" type="button" id="dropdownMenuLANGAGE" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ENGLISH</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLANGAGE">
+              <a class="dropdown-item" href="#">FRENCH</a>
+              <a class="dropdown-item" href="#">ARABIC</a>
+            </div>
+          </div>  
+          <div class="dropdown" style="margin-left : 5px; margin-right : 3px; ">
+            <a href="" class="dropdown-toggle" type="button" id="dropdownMenuCURRENCY" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CURRENCY (MAD)</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuCURRENCY">
+              <a class="dropdown-item" href="#">DIRHAMS MAD</a>
+              <a class="dropdown-item" href="#">US DOLLAR USD</a>
+              <a class="dropdown-item" href="#">EURO </a>
+            </div>
+          </div>          
+        </div>
+        <div class="social" style="float: right;word-spacing: 5px; padding: 12px;">
+
+           <a href="">
+            HELP
+           </a>
+           <span style="color: white;">|</span>
+           <a href="">
+            ABOUTS US
+           </a> 
+           <span style="color: white;">|</span>
+           <a href="" style="margin-right: 15px;">
+            CONTACT US
+           </a> 
+
+          <a href="" style=" padding-left: 5px;padding-right: 5px;">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" style=" padding-left: 5px;padding-right: 5px;">
+            <i class="fab fa-facebook"></i>
+          </a> 
+          <a href="" style=" padding-left: 5px;padding-right: 5px;">
+            <i class="fab fa-youtube"></i>
+          </a> 
+          <a href="" style=" padding-left: 5px;padding-right: 5px;">
+            <i class="fab fa-google"></i>
+          </a> 
+        </div> 
+      </div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav" >
+      <div class="container" style="margin: 0px; width: 72%;">
+        <a class="navbar-brand  js-scroll-trigger" href="/">
+          <img src="../img/logo.svg" width="230" height="50" class="d-inline-block align-top" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto" style="margin-left: 20px !important;">
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                HOME
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/new">
+                NOUVEAU
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/inventory">
+                INVENTAIRE
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pro">
+                PRO
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="prices">
+                PRIX
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/account">
+                GÉRER VOS ANNONCES
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div style="postion: relative;">
+
+        <a href="#" class="up-user-face">
+          <img src="../img/faces.jpg" class="user-face">
+        </a> 
+
+        <div class="login-nav">
+ 
+         
+            <form method="post">
+                <div class="form-group">
+                  <h4 style="font-size: 14px;">Login or E-mail</h4>
+                  <input type="text" name="stm_user_login" autocomplete="off" placeholder="Enter login or E-mail" style="    padding-left: 8px;height: 40px;line-height: 40px;">
+                </div>
+
+                <div class="form-group">
+                  <h4 style="font-size: 14px;">Password</h4>
+                  <input type="password" name="stm_user_password" autocomplete="off" placeholder="Enter password" style="    padding-left: 8px;height: 40px;line-height: 40px;">
+                </div>
+
+                <div class="form-group form-checker">
+                  <label style="float: left;display: inline; width: 100%;">
+                    <div class="checker">
+                      <span style="float: left;margin-bottom: 10px;">
+                        <input type="checkbox" name="stm_remember_me" style="opacity: 1;filter: alpha(opacity=0);-moz-opacity: 0;border: none;background: none;display: -moz-inline-box;display: inline-block;*display: inline;zoom: 1;">
+                      </span>
+                    </div>
+                    <span style="padding: 10px;">Remember me</span>
+                  </label>
+                </div>
+                <span class="stm-listing-loader"><i class="stm-icon-load1"></i></span>
+                <a href="h" class="logBtn" style="">Login</a>
+                <a href="h" class="logBtn" style="background: transparent; color: #f17f18 !important;">Sign Up</a>
+                <div class="stm-validation-message"></div>
+            </form>              
+        </div>  
+      </div>    
+      <a href="/cars/add" class="actionNew">
+          <div style="padding: 2px;">
+            <i class="fa fa-car" style="font-size: 20px;margin-right: 7px;"></i>
+            AJOUTER UNE ANNONCE           
+          </div>
+      </a>      
+    </nav> 
+
+     
+
+    <!-- Map div  -->
+    <div class="">
+      <div class="mapContainer text-center" >
+        <div id="map" ></div>
+      </div>
+      <!-- Tab search div  -->
+      <div class="_tab-search">
+        <ul class="nav nav-tabs" id="myTab" role="tablist" style="width: fit-content;background: #464f57;border: none;">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">FIND BY INFO CAR</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="price-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">FIND BY PRICE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">FIND IN YOUR LOCATION</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent" >
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <form>
+              <div class="form-row align-items-center">
+                <div class="col-auto">
+                  <label class="sr-only" for="inlineFormInput">CHOOSE BODY</label>
+                  <input type="text" class="form-control mb-2" id="inlineFormInput1" placeholder="CHOOSE BODY" style="height: 48px;border: none;border-radius: 0;background-color: #eceff3;outline: none !important;">
+                </div>
+                <div class="col-auto">
+                  <label class="sr-only" for="inlineFormInput">CHOOSE MODEL</label>
+                  <input type="text" class="form-control mb-2" id="inlineFormInput2" placeholder="CHOOSE MODEL" style="height: 48px;border: none;border-radius: 0;background-color: #eceff3;outline: none !important;">
+                </div>
+                <div class="col-auto">
+                  <label class="sr-only" for="inlineFormInput">CHOOSE CONDIITONS</label>
+                  <input type="text" class="form-control mb-2" id="inlineFormInput3" placeholder="CHOOSE CONDIITONS" style="height: 48px;border: none;border-radius: 0;background-color: #eceff3;outline: none !important;">
+                </div>
+                <div class="col-auto">
+                  <button type="submit" class="btn btn-primary mb-2" style="margin-left: 10px;min-width: 170px;padding: 16px 25px 13px 25px;font-weight: 700;background: #fa9539;border: #fa9539;">
+                    <i class="fa fa-search"></i>
+                    SEARCH
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <div class="dropdown" style="margin-left : 5px; margin-right : 3px; ">
+              <a style="color: gray; text-decoration: underline" class="dropdown-toggle" type="button" id="dropdownMenuCURRENCY" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Advanced search</a>
+            </div> 
+          </div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="price-tab">
+            <form class="form-inline">
+              <div class="form-group mb-2">
+                <label for="staticEmail2" class="label-form">Min Prix</label>
+                <input type="range" class="form-control" />
+              </div>
+              <div class="form-group mb-2">
+                <label for="staticEmail2" class="label-form">Max Prix</label>
+                <input type="range" class="form-control" />
+              </div>
+            </form>
+          </div>
+          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+        </div>
+      </div>      
+    </div>
+
+    <!-- LIST SECTION / -->
+    <section id="list">
+      <div class="container-video" >
+        <h2>Latest Premium <span style="color:#fa9539">Cars</span></h2>
+        <p class="lead">Vous êtes à la recherche d'une voiture, où vous cherchez à vendre votre enciens voiture. VIDOR.MA et là pour vous. </p>
+        <div class="row">
+
+          <% for (var i = 0 ; i < 6; i++) { %>
+            <div class="col-md-3  col-lg-3 col-sm-4 col-xs-12" >
+              <div class="category-grid-box-1">
+
+                <!-- Image and video box-->
+                <div class="image">
+                  <a data-href="<%= listCars[i].video %>" class="play-video">
+                    <img src="http://carspot.scriptsbundle.com/wp-content/uploads/2017/08/playbutton-u693-r.png" alt="Icon"></a>
+                  <a href="">
+                    <img src="<%= (listCars[i].video).replace('https://www.youtube.com/watch?v=','https://img.youtube.com/vi/')%>/0.jpg" alt="Mustang Shelby GT350 Coupe" class="img-responsive"></a> 
+                  <div class="price-tag">
+                  <div class="price"><span><%= listCars[i].prix %> DHS</span> </div>
+                  </div>
+                </div>
+
+                <!-- Short description box-->
+                <div class="short-description-1 clearfix">
+                  <div class="category-title"> 
+                      <span class="padding_cats">
+                        <a href=""><%= listCars[i].marque %></a>
+                      </span>
+                      <span class="padding_cats">
+                        <a href=""><%= listCars[i].model %></a>
+                      </span> 
+                  </div>
+                  <h3> 
+                    <a href="/cars/view/<%= listCars[i].id %>">
+                      <%= listCars[i].title %>
+                      </a>
+                  </h3>
+                  <p class="location">
+                    <i class="fa fa-map-marker"></i>
+                    <a href="" style="font-size: 15px;"><%= listCars[i].emplacement %></a>
+                  </p>
+                  <ul class="list-unstyled">
+                    <li><i class="flaticon-gas-station-1"></i><%= listCars[i].carburant %></li>
+                    <li><i class="flaticon-dashboard"></i><%= listCars[i].kilometrage %>  Km</li>
+                    <li><i class="flaticon-engine-2"></i><%= listCars[i].puissancefiscal %>  cc</li>
+                    <li><i class="flaticon-car-2"></i><%= listCars[i].model %></li>
+                    <li><i class="flaticon-cogwheel-outline"></i><%= listCars[i].colorcarousserie %></li>
+                  </ul>
+                </div>
+
+                <!-- ad sub info box-->
+                <div class="ad-info-1">
+                  <p style="float: left;line-height: 2.5;width:50%;margin: auto;height: auto;">
+                    <i class="flaticon-calendar"></i> &nbsp;<span><%= listCars[i].date_publication %></span> 
+                  </p>
+                  <ul class="pull-right ">
+                    <li> 
+                      <a data-toggle="tooltip" data-placement="top" title="" data-original-title="Saved Ad" href="javascript:void(0);" class="save-ad" data-adid="81"><i class="flaticon-like-1"></i></a> 
+                    </li>
+                    <li> 
+                      <a href=""><i class="flaticon-message"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Listing Ad Grid -->
+            </div>
+
+
+            
+          <% } %>
+
+        </div>        
+
+
+        <a href="/cars/" class="btn btn-primary mb-2" style="margin-left: 44%;min-width: 170px;padding: 16px 25px 13px 25px;font-weight: 700;background: #fa9539;border: #fa9539;">
+          <i class="fa fa-plus"></i>
+          Tout voir
+        </a>        
+      </div>
+    </section>
+    <!--  OUR SERVICE /-->
+    <section class="section-padding-120 our-services">
+        <!--Image One-->
+        <div class="background-1"></div>
+        <!--Image Two-->
+        <div class="background-2"></div>
+        <img class="img-responsive wow slideInRight custom-img animated" data-wow-delay="0ms" data-wow-duration="2000ms" src="http://templates.scriptsbundle.com/carspot/demos/images/sell-1.png" alt="" style="visibility: visible; animation-duration: 2000ms; animation-delay: 0ms; animation-name: slideInRight;">
+        <div class="container">
+           <div class="row clearfix">
+              <!--Left Column-->
+              <div class="left-column col-lg-4 col-md-4 col-md-12">
+                 <div class="inner-box">
+                    <h2>Nos Services</h2>
+                    <div class="text">Une invitation à parcourir nos services pour les personnes qui veulent vendre où trouvez un véhicule adapté a leurs besoin. VIDOR.MA vous facile tous ces choses.</div>
+                 </div>
+              </div>
+              <!--Transparent Column-->
+              <div class="service-column col-lg-8 col-md-12">
+                 <div class="inner-box wow fadeInRight animated animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInRight;">
+                    <div class="row clearfix">
+                       <!--Icon Column-->
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div class="services-grid-3">
+                             <div class="content-area">
+                                <h1>01.</h1>
+                                <a href="">
+                                   <h4>Vendre Votre Véhicule</h4>
+                                </a>
+                                <p>Vendez votre véhicule, n'est pas un soucie actuellment, prenez une video de votre véhicule et enregistrer votre annonce</p>
+                                <div class="service-icon">
+                                   <i class="fa fa-shopping-cart"></i>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                       <!--Icon Column-->
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div class="services-grid-3">
+                             <div class="content-area">
+                                <h1>02.</h1>
+                                <a href="">
+                                   <h4>Acheter un Véhicule</h4>
+                                </a>
+                                <p>Faite un tour dans notre plateforme et chercher ce qui vous va bien.</p>
+                                <div class="service-icon">
+                                   <i class="fa fa-car-side"></i>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                       <!--Icon Column-->
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div class="services-grid-3">
+                             <div class="content-area">
+                                <h1>03.</h1>
+                                <a href="">
+                                   <h4>Évaluer votre Véhicule</h4>
+                                </a>
+                                <p>Diagnostic technique, Nous avons nos experts partenaire pour vous aidez à évaluer votre véhicule techniquement</p>
+                                <div class="service-icon">
+                                   <i class="fa fa-balance-scale"></i>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                       <!--Icon Column-->
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div class="services-grid-3">
+                             <div class="content-area">
+                                <h1>04.</h1>
+                                <a href="">
+                                   <h4>Evaluation technique </h4>
+                                </a>
+                                <p>, Nous avons nos experts partenaire pour vous aidez à évaluer votre véhicule techniquement</p>
+                                <div class="service-icon">
+                                   <i class="fa fa-car"></i>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+    </section>
+
+    <div class="app-download-section style-2">
+      <!-- app-download-section-wrapper -->
+      <div class="app-download-section-wrapper">
+         <!-- app-download-section-container -->
+         <div class="app-download-section-container">
+            <!-- container -->
+            <div class="container">
+               <!-- row -->
+               <div class="row">
+                  <div class="col-md-6 col-sm-6">
+                     <div class="mobile-image-content">
+                      <img src="img/capMobile.png" style="width: 176px;height: 351px;left: 166px;top: 29px;">
+                      <img src="img/hand.png" alt=""> </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                     <div class="app-text-section">
+                        <h5>Télécharger notre application</h5>
+                        <h3>Avoir notre application dans votre téléphone</h3>
+                        <ul>
+                           <li>Trouver des annonces dans vos allenteurs</li>
+                           <li>Parcourir des annonces réel, et séléctifs</li>
+                           <li>Vendez votre véhicules</li>
+                           <li>Achetez une voiture utilisé.</li>
+                        </ul>
+                        <div class="app-download-btn">
+                           <div class="row">
+                              <div class="col-md-6 col-sm-6">
+                                 <!-- Windows Store -->
+                                 <a href="#" title="Windows Store" class="btn app-download-button">
+                                 <span class="app-store-btn">
+                                   <i class="fab fa-android"></i>
+                                   <span>
+                                     <span>Télécharger depuis </span>
+                                     <span>Google Store </span>
+                                   </span>
+                                 </span>
+                                 </a>
+                                 <!-- /Windows Store -->
+                              </div>
+                              <div class="col-md-6 col-sm-6">
+                                 <!-- Windows Store -->
+                                 <a href="#" title="Windows Store" class="btn app-download-button"> 
+                                  <span class="app-store-btn">
+                                    <i class="fab fa-apple"></i>
+                                    <span>
+                                      <span>Télécharger depuis </span>
+                                      <span>Apple Store </span> 
+                                    </span>
+                                  </span>
+                                 </a>
+                                 <!-- /Windows Store -->
+                              </div>
+                              <!-- Windows Store -->
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- /row -->
+            </div>
+            <!-- /container -->
+         </div>
+         <!-- /app-download-section-container -->
+      </div>
+      <!-- /download-section-wrapper -->
+    </div>
+
+    <%- include( '../partials/footer') %>
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="js/scrolling-nav.js"></script>
+
+    <!-- Google Map  -->
+    <script type="text/javascript">
+
+
+      $('.up-user-face').on('click',function(){
+        if (!$('.login-nav').is(':visible')) {
+
+          $(this).children().css('background',' #fc9632')
+          $('.login-nav').show();
+        }else{
+          $(this).children().css('background','transparent')
+          $('.login-nav').hide();
+        }
+      });
+
+
+
+
+      function initMap() {
+          var currentLatitude ,currentLongitude ;      
+          var location;
+          //The current position of the user get and succes, fail
+          var options = {
+            enableHighAccuracy: true,
+            timeout: 6000*60,
+            maximumAge: 0
+          };      
+          //GET THE CURRENT POSITION
+          navigator.geolocation.getCurrentPosition(function(pos) {
+            var crd = pos.coords;
+
+            console.log('Votre position actuelle est :');
+            console.log(`Latitude : ${crd.latitude}`);
+            console.log(`Longitude : ${crd.longitude}`);
+            console.log(`La précision est de ${crd.accuracy} mètres.`);
+
+            location = new google.maps.LatLng(crd.latitude, crd.longitude);
+
+
+            var mapCanvas = document.getElementById('map');
+
+            var mapOptions = {
+                center: location,
+                zoom: 11,
+                panControl: true,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+
+
+            var markerImage = {
+                url: 'img/marker.png', // url
+                scaledSize: new google.maps.Size(50, 50), // scaled size
+                origin: new google.maps.Point(0,0), // origin
+                anchor: new google.maps.Point(0, 0) // anchor
+            };
+            console.log(location);
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                // icon: markerImage
+            });
+            var  cars = <%- Cars %>;
+            cars.forEach(function(item){
+              if ( item.lat != null && item.lng != null) {
+                var thisLocation = new google.maps.LatLng( item.lat, item.lng);          
+                var marker = new google.maps.Marker({
+                    position: thisLocation,
+                    map: map
+                });
+                var contentString = '<div class="info-window">' +
+                        '<h3><a href="cars/view/' +
+                        item.id+'" style="color: gray;">' +
+                        item.title+'</a></h3>' +
+                        '<div class="info-content">' +
+                          '<p class="price">'+item.prix+'</p>' +
+                          '<iframe src="'+item.video+'" class="video"></iframe>' +
+                          '</div>' +
+                        '</div>';
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString,
+                    maxWidth: 400
+                });
+
+                marker.addListener('mouseover', function () {
+                    infowindow.open(map, marker);
+                });
+
+                marker.addListener('mouseout', function () {
+                    infowindow.close();
+                });
+              };
+            });
+
+
+            var contentString = '<div class="info-window">' +
+                    '<h3>Vous êtes içi</h3>';
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString,
+                maxWidth: 400
+            });
+
+            marker.addListener('click', function () {
+                infowindow.open(map, marker);
+            });
+            var mapCanvas = document.getElementById('map').style.display = "";
+
+
+          }, function (err) {
+            console.warn(`ERREUR (${err.code}): ${err.message}`);
+          }, options);      
+          //The current position of the user get and succes, fail
+
+    
+
+
+      };
+
+
+    </script>
+
+  </body>
+
+</html>

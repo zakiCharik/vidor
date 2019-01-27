@@ -1,0 +1,142 @@
+    <!-- head nav  -->
+    <div class="_top-header" style="background-color: #454d56fc;">
+      <div class="col sm-only _nav-top-info" >
+        <div class="left" style="padding: 12px;float: left;word-spacing: 9px;display: inline-flex;">
+          <div class="dropdown" style="margin-left : 3px; margin-right : 5px; ">
+            <a href="" class="dropdown-toggle" type="button" id="dropdownMenuLANGAGE" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ENGLISH</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLANGAGE">
+              <a class="dropdown-item" href="#">FRENCH</a>
+              <a class="dropdown-item" href="#">ARABIC</a>
+            </div>
+          </div>  
+          <div class="dropdown" style="margin-left : 5px; margin-right : 3px; ">
+            <a href="" class="dropdown-toggle" type="button" id="dropdownMenuCURRENCY" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CURRENCY (MAD)</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuCURRENCY">
+              <a class="dropdown-item" href="#">DIRHAMS MAD</a>
+              <a class="dropdown-item" href="#">US DOLLAR USD</a>
+              <a class="dropdown-item" href="#">EURO </a>
+            </div>
+          </div>          
+        </div>
+        <div class="social" style="float: right;word-spacing: 5px; padding: 12px;">
+
+           <a href="">
+            HELP
+           </a>
+           <span style="color: white;">|</span>
+           <a href="">
+            ABOUTS US
+           </a> 
+           <span style="color: white;">|</span>
+           <a href="" style="margin-right: 15px;">
+            CONTACT US
+           </a> 
+
+          <a href="" style=" padding-left: 5px;padding-right: 5px;">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" style=" padding-left: 5px;padding-right: 5px;">
+            <i class="fab fa-facebook"></i>
+          </a> 
+          <a href="" style=" padding-left: 5px;padding-right: 5px;">
+            <i class="fab fa-youtube"></i>
+          </a> 
+          <a href="" style=" padding-left: 5px;padding-right: 5px;">
+            <i class="fab fa-google"></i>
+          </a> 
+        </div> 
+      </div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav" >
+      <div class="container" style="margin: 0px; width: 72%;">
+        <a class="navbar-brand  js-scroll-trigger" href="/">
+          <img src="../img/logo.svg" width="230" height="50" class="d-inline-block align-top" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto" style="margin-left: 20px !important;">
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                HOME
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/new">
+                NOUVEAU
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/inventory">
+                INVENTAIRE
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pro">
+                PRO
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="prices">
+                PRIX
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/account">
+                GÉRER VOS ANNONCES
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div style="postion: relative;">
+
+        <a href="#" class="up-user-face">
+          <img src="../img/faces.jpg" class="user-face">
+        </a> 
+
+        <div class="login-nav">
+          <% if ( user !== undefined || user !== null) { %>
+            <h2>Bienvenu </h2>
+          <% } else { %>    
+         
+            <h2>Bienvenu <%= user.lastname %></h2>
+            <form method="post">
+                <div class="form-group">
+                  <h4 style="font-size: 14px;">Login or E-mail</h4>
+                  <input type="text" name="stm_user_login" autocomplete="off" placeholder="Enter login or E-mail" style="    padding-left: 8px;height: 40px;line-height: 40px;">
+                </div>
+
+                <div class="form-group">
+                  <h4 style="font-size: 14px;">Password</h4>
+                  <input type="password" name="stm_user_password" autocomplete="off" placeholder="Enter password" style="    padding-left: 8px;height: 40px;line-height: 40px;">
+                </div>
+
+                <div class="form-group form-checker">
+                  <label style="float: left;display: inline; width: 100%;">
+                    <div class="checker">
+                      <span style="float: left;margin-bottom: 10px;">
+                        <input type="checkbox" name="stm_remember_me" style="opacity: 1;filter: alpha(opacity=0);-moz-opacity: 0;border: none;background: none;display: -moz-inline-box;display: inline-block;*display: inline;zoom: 1;">
+                      </span>
+                    </div>
+                    <span style="padding: 10px;">Remember me</span>
+                  </label>
+                </div>
+                <span class="stm-listing-loader"><i class="stm-icon-load1"></i></span>
+                <a href="h" class="logBtn" style="">Login</a>
+                <a href="h" class="logBtn" style="background: transparent; color: #f17f18 !important;">Sign Up</a>
+                <div class="stm-validation-message"></div>
+            </form>              
+          <% } %> 
+        </div>  
+      </div>    
+      <a href="/cars/add" class="actionNew">
+          <div style="padding: 2px;">
+            <i class="fa fa-car" style="font-size: 20px;margin-right: 7px;"></i>
+            AJOUTER UNE ANNONCE           
+          </div>
+      </a>      
+    </nav> 

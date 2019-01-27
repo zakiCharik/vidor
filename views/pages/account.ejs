@@ -1,0 +1,292 @@
+<%- include( '../partials/head', {title: 'Profile Page'} ) %>
+
+
+  <body id="page-top" >
+    <%- include( '../partials/header' ,{user : user}) %>
+ 
+    <div  class="bg-light">
+      <div class="page-header-area-2 gray">
+        <div class="container">
+          <div class="row">
+             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="small-breadcrumb">
+                   <div class="breadcrumb-link">
+                      <ul>
+                          <li>                       
+                               <a href="">
+                                  Home 
+                              </a>
+                          </li>
+                          <li class="active">
+                              <a href="" class="active">
+                                  Profile                        
+                              </a>
+                          </li>
+                     </ul>
+                   </div>
+
+                   
+                </div>
+             </div>
+          </div>
+        </div>
+      </div>    
+      <div class="" style="margin: 0px; padding: 15px; color: #777777;">
+        <div class="row">
+          <!-- profile nav -->
+          <div class="col-lg-3">
+
+            <div class="card" >
+              <% if ( user.image !== '')  { %>
+
+                <img class="card-img-top" src="<%= user.image %>" alt="Card image cap">              
+              <% } else { %>
+                <img class="card-img-top" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_168662faf00%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_168662faf00%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2299.4375%22%20y%3D%2296.3375%22%3EImage%20cap%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image cap">              
+              <% } %>
+
+
+              <div class="card-body">
+                <h5 class="card-title" style="color: #fc9632;font-weight: 600;"><%= user.lastname %> <%= user.firstname %> </h5>
+                <h5 class="card-title">
+                  <span class="fa fa-calendar-week"></span>
+                  Dernier connexion : 
+                </h5>
+                <h5 class="card-title">
+                  <span class="fa fa-map-marker"></span> 
+                  <%= user.emplacement %> 
+                </h5>
+              </div>
+              <ul class="list-group list-group-flush" style="color:#777777 !important;">
+                <li class="list-group-item">
+                  <a href="#" class="card-link">
+                    <span class="fa fa-user"></span> 
+                    Modifier votre profil
+                  </a>  
+                </li>
+                <li class="list-group-item">
+                  <a href="#" class="card-link">
+                    <span class="fa fa-key"> </span>
+                    Changer Mot de passe
+                  </a>  
+                </li>
+                <li class="list-group-item">
+                  <a href="#" class="card-link">
+                    <span class="fa fa-image"> </span>
+                    Changer l'image de profil
+                  </a>  
+                </li>
+                <li class="list-group-item">
+                  <a href="#" class="card-link">
+                    <span class="fa fa-map-marker"> </span>
+                    Changer votre addresse
+                  </a>  
+                </li>
+                <li class="list-group-item">
+                  <a href="#" class="card-link">
+                    <% if( user.confirmed_email == null ) { %>
+                      <span class="fa fa-check-double" style="color: red;"> </span>
+                      Vérification 
+                      <br/> 
+                      <small>Email non vérifié</small>
+
+                    <% } else { %>
+                      <span class="fa fa-check-double" style="color: green;"> </span>
+                      Vérification
+                    <% } %>
+                  </a>  
+                </li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="card-link">Statistique</a>
+                <a href="#" class="card-link">Support</a>
+                <a href="/logout" class="card-link">logout</a>
+              </div>
+            </div>
+          </div>
+          <!-- profile end nav -->
+          <!-- ==================== -->
+          <!-- Infor and list of ads -->
+          <div class="col-lg-9">
+
+            <div class="card">
+              <div class="card-header">
+               Liste d'annonces - <small class="card-title">Mes annonces </small>
+              </div>
+              <div class="card-body">
+                
+
+                  <div class="row">
+                    <% for (var i = 0 ; i < listCars.length ; i++) { %>
+                      <div class="col-lg-4 ">
+                        <div class="car-card">
+                          <div class="header-video">
+                            <iframe src="<%= listCars[i].video %>?controls=2"></iframe>
+                          </div>
+                          <div class="car-content-card">
+                            <div class="car-info-card">
+                              <span class="car-title"><%= listCars[i].title %></span>
+                              <span class="price-tag badge-used-redirected"><%= listCars[i].prix %> DHS</span>
+                            </div>
+                            <div class="car-location">
+                              <i class="fa fa-map-marker"></i><span> <%= listCars[i].emplacement %></span>
+                            </div>
+                            <div class="car-footer-card">
+                              <ul>
+                                <li>
+                                  <div class="form-group">
+                                    <select class="form-control" id="action-car-<%= listCars[i].id %>">
+                                      <option>Archiver</option>
+                                      <option>Modifier</option>
+                                      <option>Supprimer</option>
+                                      <option>Cacher</option>
+                                    </select> 
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="form-group">
+                                    <select class="form-control" id="action-car-<%= listCars[i].id %>">
+                                      <option>Booster</option>
+                                      <option>Renouvellement</option>
+                                      <option>Renouvellement d'or</option>
+                                      <option>Annonce Fixe</option>
+                                    </select> 
+                                  </div>
+                                </li>
+                                <li align="right">
+                                  <% if ( listCars[i].status_ads == "publier" ) { %>
+                                    <span style="color: green;">PUBLIER</span>              
+                                  <% } if ( listCars[i].status_ads == "booster" ) { %>  
+                                    <span style="color: blue;">BOOSTER</span>              
+                                  <% } if ( listCars[i].status_ads == "supprimer" ) { %>  
+                                    <span style="color: red;">SUPPRIMER</span>              
+                                  <% } if ( listCars[i].status_ads == "archiver" ) {%>  
+                                    <span style="color: orange;">ARCHIVER</span>              
+                                  <% } %>  
+
+                                </li>
+                              </ul>
+                            </div>
+
+                          </div>
+
+                        </div>
+                      </div>                
+                    <% } %>
+                  </div>                
+
+                <a href="#" class="btn btn-primary">Voir toutes les annonces</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                Annonces Booster - <small class="card-title">Mes boost</small>
+
+              </div>
+              <div class="card-body">
+                  <div class="row">
+                    <% for (var i = 0 ; i < listCars.length ; i++) { %>
+                      <% if ( listCars[i].status_ads == "booster" ) { %>  
+
+
+                        <div class="col-lg-4 ">
+                          <div class="car-card">
+                            <div class="header-video" style="padding: 11px 11px 0 11px;">
+                              Booster ID : <%= listCars[i].id %>  
+                              <a href="#" style="float:right;color: #fe9729;"> <span class="fa fa-trash-alt"></span></a>
+                            </div>
+                            <div class="header-video" style="padding: 11px 11px 0 11px;">
+                              Date de début : <%= listCars[i].date_publication %> 
+                            </div>
+                            <div class="header-video" style="padding: 11px 11px 0 11px;">
+                              Date de fin : <%= listCars[i].date_publication %> 
+                            </div>
+                            <div class="car-content-card" >
+                              <div class="car-info-card" style="    height: auto;">
+                                <span class="car-title"><%= listCars[i].marque %></span>
+                                <span class="price-tag badge-used-redirected"><%= listCars[i].prix %> DHS</span>
+                              </div>
+                              <div class="car-location">
+                                <i class="fa fa-map-marker"></i><span> <%= listCars[i].emplacement %></span>
+                              </div>
+                              <div class="car-location">
+                                <i class="fa fa-eye"></i><span> 10 vue</span> 
+                                <i class="fa fa-heart"></i><span> 2 favoris</span>
+                                <i class="fa fa-sort-amount-up"></i><span> 22 order</span>
+                              </div>
+                              <div class="car-footer-card">
+                                <ul>
+                                  <li>
+                                    <div class="form-group">
+                                      <select class="form-control" id="action-car-<%= listCars[i].id %>">
+                                        <option>Archiver</option>
+                                        <option>Modifier</option>
+                                        <option>Supprimer</option>
+                                        <option>Cacher</option>
+                                      </select> 
+                                    </div>
+                                  </li>
+
+                                  </li>
+                                  <li align="right">
+                                    <% if ( listCars[i].status_ads == "publier" ) { %>
+                                      <span style="color: green;">PUBLIER</span>              
+                                    <% } if ( listCars[i].status_ads == "booster" ) { %>  
+                                      <span style="color: blue;">BOOSTER</span>              
+                                    <% } if ( listCars[i].status_ads == "supprimer" ) { %>  
+                                      <span style="color: red;">SUPPRIMER</span>              
+                                    <% } if ( listCars[i].status_ads == "archiver" ) {%>  
+                                      <span style="color: orange;">ARCHIVER</span>              
+                                    <% } %>  
+
+                                  </li>
+                                </ul>
+                              </div>
+
+                            </div>
+
+                          </div>
+                        </div>                
+                      <% } %>
+                    <% } %>
+                  </div>  
+                <a href="#" class="btn btn-primary">Activer d'autre Boost</a>
+              </div>
+            </div>
+          </div>
+          <!-- Infor and list of ads -->
+        </div>
+      </div>
+    </div>
+
+    <%- include( '../partials/footer') %>
+
+    
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="js/scrolling-nav.js"></script>
+
+    <!-- Google Map  -->
+    <script type="text/javascript">
+      $('.up-user-face').on('click',function(){
+        if (!$('.login-nav').is(':visible')) {
+
+          $(this).children().css('background',' #fc9632')
+          $('.login-nav').show();
+        }else{
+          $(this).children().css('background','transparent')
+          $('.login-nav').hide();
+        }
+      });
+
+    </script>
+
+  </body>
+
+</html>
