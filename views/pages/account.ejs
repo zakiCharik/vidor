@@ -120,7 +120,12 @@
                       <div class="col-lg-4 ">
                         <div class="car-card">
                           <div class="header-video">
-                            <iframe src="<%= listCars[i].video %>?controls=2"></iframe>
+                            <a data-href="<%= listCars[i].video %>" class="play-video">
+                              <img src="http://carspot.scriptsbundle.com/wp-content/uploads/2017/08/playbutton-u693-r.png" alt="Icon" >
+                            </a>
+                            <a href="">
+                              <img src="<%= (listCars[i].video).replace('https://www.youtube.com/watch?v=','https://img.youtube.com/vi/')%>/0.jpg" alt="Mustang Shelby GT350 Coupe" class="img-responsive" style="height: 249px!important;width: fit-content;">
+                            </a>                           
                           </div>
                           <div class="car-content-card">
                             <div class="car-info-card">

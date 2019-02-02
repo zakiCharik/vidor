@@ -109,31 +109,34 @@ router.post('/login',function(req, res, next) {
   console.log
   if (email != undefined) {
     //Verify 
-    Annoncor.authenticate(email,password,(err, foundUser)=>{
-      //If user does exist
-      console.log('err',err);
-      console.log('foundUser',foundUser);
-      req.session.user = foundUser; 	
+    Annoncor.exist(email,(err, exist)=>{
+    	if (exist == true) {
+		    Annoncor.authenticate(email,password,(errAuth, isexist,foundUser)=>{
+		    	if (isexist) {
+					req.session.user = foundUser; 	
+					Car.findByAnnoncorId(foundUser.id, (errAnnoncorFind, resAnnoncerFind)=>{
+						res.render('pages/account', {
+							listCars : resAnnoncerFind,
+							message:'',
+							user: req.session.user
+						});      			
+					});		    		
+		    	}else{
+				  res.render('pages/login', {
+				  	message:'Mot de passe incorrect',
+				  	user: req.session.user
+				  });  		    		
+		    	};
+		    });      		
+    	}else{
+			  res.render('pages/signup', {
+			  	message:'Email non trouvé enregistrez-vous',
+			  	user: req.session.user
+			  });  		
+    	};
 
-      if (foundUser != undefined && foundUser != null ) {
-	    Car.findByAnnoncorId(foundUser.id, (errAnnoncorFind, resAnnoncerFind)=>{
-
-		    console.log('resAnnoncerFind',resAnnoncerFind);
-			res.render('pages/account', {
-		        listCars : resAnnoncerFind,
-				message:'',
-				user: req.session.user
-			});      			
-	    });
-      }
-      //If user does not exist
-      else{
-        //Create Car
-        res.render('pages/login',{
-          user : req.session.user,
-        });
-      }
-    });    
+    });
+  
   };	
 });
 
@@ -179,7 +182,7 @@ router.post('/signup',function(req, res, next) {
 	    	};
 	    	if (findByEmail == undefined || findByEmail == null ) {
 			    //Verify 
-			    Annoncor.authenticate(email, password,(errAuth, foundUser)=>{
+			    Annoncor.authenticate(email, password,(errAuth, isexist,foundUser)=>{
 			      //If user does exist
 			      if (foundUser == false || foundUser == null){
 			      	var toCreateUser = {

@@ -54,6 +54,19 @@ router.get('/view/:id',function(req, res, next) {
   Car.findById(req.params.id, (err, foundCar) => {
     Annoncor.findById(foundCar[0].annoncor, (errFoundById, annoncorFound) =>{
       //
+      var user, annoncor;
+      if (req.session.user == undefined || req.session.user == null ) {
+        user = null;
+      }else{
+        user = req.session.user;        
+      };
+      
+      if (annoncorFound == undefined || annoncorFound == null ) {
+        annoncor = null;
+      }else{
+        annoncor = annoncorFound[0];        
+      };
+
       console.log('User',req.session.user);
       console.log('Car',foundCar);
       console.log('annoncorFound',annoncorFound);
@@ -61,8 +74,8 @@ router.get('/view/:id',function(req, res, next) {
       //
       res.render('pages/view',{
         ads : foundCar[0],
-        annoncor : annoncorFound[0],
-        user : req.session.user
+        annoncor : annoncor,
+        user : user
       });
 
     });

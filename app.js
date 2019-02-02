@@ -63,7 +63,7 @@ app.set('views', __dirname + '/views');
 app.set("view options", { layout: false })
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public/img/', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -164,12 +164,12 @@ function ensureAuthenticated(req, res, next) {
 ==========================
 =========================*/
 
-const api = require('./routes/index');
-const routes = require('./routes/api');
+const api = require('./routes/api');
+const routes = require('./routes/index');
 const cars = require('./controllers/CarsController');
 
 app.use('/', routes);
-app.use('/api/v1', routes);
+app.use('/api/v1', api);
 app.use('/cars', cars);
 
 //Facebook Account

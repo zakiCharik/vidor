@@ -83,13 +83,14 @@ var Annoncor = {
 			if (user[0] != undefined && user[0] != null) {
 				bcrypt.compare(password, user[0].password, function (err, result) {
 					if (result === true) {
-						return callback(null, user[0]);
+						return callback(null, true,user[0]);
+						return callback(null, true,user[0]);
 					} else {
-					  return callback(err, null);
+					  return callback(err, false,null);
 					}
 				});				
 			}else{
-				return callback(err, false);				
+				return callback(err, false,null);				
 			};
 		});
 
@@ -104,6 +105,23 @@ var Annoncor = {
 				if(err) throw err;
 				if (rows !== undefined || rows !== null) {
 					callback(err,rows);
+				};
+
+			});		
+		}
+	},
+
+	exist: function(email,callback){
+		if (email === undefined || email === '') {
+			return null;
+		}else{
+			var selectQuery = 'SELECT * FROM annoncors where email = "'+email+'"';
+			mySqlClient.query(selectQuery, function(err, rows) {
+				if(err) throw err;
+				if (rows !== undefined || rows !== null) {
+					callback(err,true);
+				}else{
+					callback(err,false);					
 				};
 
 			});		
