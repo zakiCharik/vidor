@@ -1,2 +1,4 @@
 db.js
 bin/www
+node_modules/*
+node_moduless

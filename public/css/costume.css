@@ -5309,7 +5309,7 @@ label {
 
 
 .background-1 {
-	background-image: url(http://templates.scriptsbundle.com/carspot/demos/images/mechanic.jpg);
+	background-image: url(../img/mechanic.jpg);
 	background-position: center top;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -5333,7 +5333,7 @@ label {
 }
 
 .background-2 {
-	background-image: url(http://templates.scriptsbundle.com/carspot/demos/images/service.jpg);
+	background-image: url(../img/service.jpg);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -5345,7 +5345,7 @@ label {
 }
 
 .background-3 {
-	background-image: url(../images/left-img.jpg);
+	background-image: url(../img/left-img.jpg);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;

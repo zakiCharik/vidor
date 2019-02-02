@@ -1,0 +1,10 @@
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=root
+DB_DATABASE=db_vedor
+DB_SPCKET_PATH=/Applications/MAMP/tmp/mysql/mysql.sock
+FACEBOOK_APP_ID=426581701213953
+FACEBOOK_APP_SECRET=
+GOOGLE_CLIENT_ID=149645064129-4ak9apr77ggqomrrk9ciu0vi2svh23e8.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=bYFxOgtVfgBy8FUpFSE3gFH1
+GOOGLE_REDIRECT_URL=http://localhost:3005/callback	

@@ -21,6 +21,7 @@ function ensureLogin(req, res, next) {
 
 
 
+// 
 router.get('/',function(req, res, next) {
   //...
   console.log('REQ - GET : INDEX');
@@ -225,115 +226,6 @@ router.post('/signup',function(req, res, next) {
 		});    	
 	};
 });
-
-router.get('/ads',function(req, res, next) {
-	res.setHeader('Access-Control-Allow-Origin','*');
-	var	ads = [{
-			title: 'Je met en vente Lugan',	
-			description: 'Lugan a vendre, bonne prix',	
-			marque: 'DACIA',	
-			model: 'Logan',	
-			category: 'Mini citaden',	
-			modelAnnee: '2011',	
-			anneeDed: 'none',	
-			prix: 70000,	
-			ville: 'Casablanca',	
-			carburant: 'Diesel',	
-			papierVente: 'proc',	
-			kilometrage: '40 000',	
-			puissanceFiscal: 6,	
-			prixVignetteRc: 2800,	
-			accidenté: false,	
-			vignetteEnCours: true,	
-			annonceur: 'Mohamed ben hbile',	
-			consomation: '0.07',	
-			transmission: 'Manuelle'
-		},{
-			title: 'Je met en vente Lugan',	
-			description: 'Lugan a vendre, bonne prix',	
-			marque: 'DACIA',	
-			model: 'DUSTER',	
-			category: 'Mini citaden',	
-			modelAnnee: '2011',	
-			anneeDed: 'none',	
-			prix: 160000,	
-			ville: 'Casablanca',	
-			carburant: 'Diesel',	
-			papierVente: 'proc',	
-			kilometrage: '40 000',	
-			puissanceFiscal: 6,	
-			prixVignetteRc: 2800,	
-			accidenté: false,	
-			vignetteEnCours: true,	
-			annonceur: 'Mohamed ben hbile',	
-			consomation: '0.07',	
-			transmission: 'Manuelle'
-		},{
-			title: 'Je met en vente Lugan',	
-			description: 'Lugan a vendre, bonne prix',	
-			marque: 'DACIA',	
-			model: 'Logan',	
-			category: 'Mini citaden',	
-			modelAnnee: '2011',	
-			anneeDed: 'none',	
-			prix: 120000,	
-			ville: 'Casablanca',	
-			carburant: 'Diesel',	
-			papierVente: 'proc',	
-			kilometrage: '40 000',	
-			puissanceFiscal: 6,	
-			prixVignetteRc: 2800,	
-			accidenté: false,	
-			vignetteEnCours: true,	
-			annonceur: 'Mohamed ben hbile',	
-			consomation: '0.07',	
-			transmission: 'Manuelle'
-		},{
-			title: 'Je met en vente Lugan',	
-			description: 'Lugan a vendre, bonne prix',	
-			marque: 'DACIA',	
-			model: 'DUSTER',	
-			category: 'Mini citaden',	
-			modelAnnee: '2011',	
-			anneeDed: 'none',	
-			prix: 120000,	
-			ville: 'Casablanca',	
-			carburant: 'Diesel',	
-			papierVente: 'proc',	
-			kilometrage: '40 000',	
-			puissanceFiscal: 6,	
-			prixVignetteRc: 2800,	
-			accidenté: false,	
-			vignetteEnCours: true,	
-			annonceur: 'Mohamed ben hbile',	
-			consomation: '0.07',	
-			transmission: 'Manuelle'
-		},{
-			title: 'Je met en vente Lugan',	
-			description: 'Lugan a vendre, bonne prix',	
-			marque: 'DACIA',	
-			model: 'STEPWAY',	
-			category: 'Mini citaden',	
-			modelAnnee: '2011',	
-			anneeDed: 'none',	
-			prix: 120000,	
-			ville: 'Casablanca',	
-			carburant: 'Diesel',	
-			papierVente: 'proc',	
-			kilometrage: '40 000',	
-			puissanceFiscal: 6,	
-			prixVignetteRc: 2800,	
-			accidenté: false,	
-			vignetteEnCours: true,	
-			annonceur: 'Mohamed ben hbile',	
-			consomation: '0.07',	
-			transmission: 'Manuelle'
-	}];
-	res.status(200).send({
-		advertive : ads
-	});
-});
-
 
 
 module.exports = router;

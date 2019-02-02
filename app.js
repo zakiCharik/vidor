@@ -164,10 +164,12 @@ function ensureAuthenticated(req, res, next) {
 ==========================
 =========================*/
 
-const routes = require('./routes/index');
+const api = require('./routes/index');
+const routes = require('./routes/api');
 const cars = require('./controllers/CarsController');
 
 app.use('/', routes);
+app.use('/api/v1', routes);
 app.use('/cars', cars);
 
 //Facebook Account
