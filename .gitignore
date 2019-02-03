@@ -1,4 +1,6 @@
-db.js
-bin/www
-node_modules/*
-node_moduless
+./bin/www
+.db.js
+./node_modules
+.bin/www
+.node_modules/*
+.node_modules

@@ -5,8 +5,8 @@ var mySqlClient = mysql.createConnection({
   user      : process.env.DB_USER,
   password  : process.env.DB_PASSWORD,
   database  : process.env.DB_DATABASE,
-  socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
-  // socketPath: process.env.DB_SOCKET_PATH
+  socketPath: '/var/tmp/mysql/mysql.sock'
+  //socketPath: process.env.DB_SOCKET_PATH
 });
 
 module.exports = mySqlClient;
