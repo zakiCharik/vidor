@@ -1,6 +1,6 @@
-./bin/www
-.db.js
-./node_modules
-.bin/www
-.node_modules/*
-.node_modules
+bin/www
+db.js
+node_modules
+.env
+node_modules/*
+node_modules
