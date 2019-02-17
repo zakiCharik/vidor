@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 //Encryting password
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 
 //model
 var Car = require('../models/Car');
@@ -9,7 +9,7 @@ var Annoncor = require('../models/Annoncor');
 
 //midlleware ensureLogin
 function ensureLogin(req, res, next) {
-  if (req.session.user) {
+  if (req.user) {
     return next();
   } else {
     res.render('pages/login',{

@@ -1,23 +1,14 @@
-const express = require('express');
-const router = express.Router();
+const express           = require('express');
+const router            = express.Router();
+const passport          = require('passport');
+var secured             = require('../lib/secured');
+const ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn();
 //Encryting password
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 
 //model
 var Car = require('../models/Car');
 var Annoncor = require('../models/Annoncor');
-
-//midlleware ensureLogin
-function ensureLogin(req, res, next) {
-  if (req.session.user) {
-    return next();
-  } else {
-    res.render('pages/login',{
-      message : null,
-      user : null,
-    });
-  }
-};
 
 
 
@@ -39,21 +30,54 @@ router.get('/',function(req, res, next) {
 
 
 //GET - LOGIN PAGE
-router.get('/login',function(req, res, next) {
+// Perform the login, after login Auth0 will redirect to callback
+router.get('/login', passport.authenticate('auth0', {
+  scope: 'openid email profile'
+}), function (req, res) {
+  console.log(req.user);
 
-  res.render('pages/login', {
-  	message:'',
-  	user: req.session.user
-  });
+  res.redirect('/');
 });
 
 //GET - LOGIN PAGE
-router.get('/callback',function(req, res, next) {
-	console.log(req);	
-  res.render('pages/login', {
-  	message:'',
-  	user: req.session.user
-  });
+
+// Perform the final stage of authentication and redirect to previously requested URL or '/user'
+router.get('/callback', function (req, res, next) {
+  passport.authenticate('auth0', function (err, user, info) {
+    if (err) { return next(err); }
+    if (!user) { return res.redirect('/login'); }
+    req.logIn(user, function (err) {
+		if (err) { return next(err); }
+		const returnTo = req.session.returnTo;
+		delete req.session.returnTo;
+        Annoncor.exist(req.user.emails[0].value,(errAuth, does_Exist)=>{
+        	if (!does_Exist) {
+				Annoncor.create({
+				  lastname: req.user.nickname,
+				  firstname: req.user.nickname,
+				  password: 'passwordless',
+				  email: req.user.emails[0].value,
+				  confirmed_email: req.user.email_verified,
+				  emplacement: '',
+				  lat: '',
+				  lng: '',
+				  image: req.user.picture,
+				  whatapp: '',
+				  phone: '',
+				},
+				function(errCreate,rsult){//
+					if (rsult.insertId != undefined) {
+				    	//Create Annoncor
+				        res.redirect(returnTo);
+				    }
+				});        		
+        	}else{
+		        res.redirect(returnTo);
+        	}
+        });
+      //check if user persisted and do it if not
+    });
+  })(req, res, next);
 });
 
 //GET - LOGIN PAGE
@@ -141,93 +165,91 @@ router.post('/login',function(req, res, next) {
 });
 
 //GET - ACCOUNT
-router.get('/account', ensureLogin,function(req, res){
-	var user = req.session.user;
+router.get('/account',  ensureLoggedIn,function(req, res){
+	var user = req.user;
 	console.log(user);
-	Car.findByAnnoncorId(user.id, (errAnnoncorFind, resAnnoncerFind)=>{
-		console.log('resAnnoncerFind',resAnnoncerFind);
-		res.render('pages/account', {
-		  listCars : resAnnoncerFind,
-		  message:'',
-		  user: req.session.user
-		});           
-	});  
+	// Car.findByAnnoncorId(user.id, (errAnnoncorFind, resAnnoncerFind)=>{
+	// 	console.log('resAnnoncerFind',resAnnoncerFind);
+	// 	res.render('pages/account', {
+	// 	  listCars : resAnnoncerFind,
+	// 	  message:'',
+	// 	  user: user
+	// 	});           
+	// });  
 });
 
 //GET - ACCOUNT
-router.get('/logout', ensureLogin,function(req, res){
-	req.session.user = null;
-    res.render('pages/login',{
-      message : null,
-      user : null,
-    });
+// Perform session logout and redirect to homepage
+router.get('/logout', (req, res) => {
+  req.logout();
+  res.redirect('/');
 });
 
 //POST - LOGIN
 router.post('/signup',function(req, res, next) {
 	var email = req.body.email;
 	var password = req.body.password;
-	password = bcrypt.hashSync(password,10);
+	// password = bcrypt.hashSync(password,10);
 
 	console.log(req.body);
-	if (email != undefined) {
-	    Annoncor.findByEmail(email,(errAuth, foundUserByEmail)=>{
-	    	var findByEmail;
-			console.log('Tail',foundUserByEmail.length );
-	    	if (foundUserByEmail.length > 0) {
-		    	findByEmail = foundUserByEmail[0];
+	// if (email != undefined) {
+	//     Annoncor.findByEmail(email,(errAuth, foundUserByEmail)=>{
+	//     	var findByEmail;
+	// 		console.log('Tail',foundUserByEmail.length );
+	//     	if (foundUserByEmail.length > 0) {
+	// 	    	findByEmail = foundUserByEmail[0];
 
-	    	}else{
-		    	findByEmail = foundUserByEmail;
-	    	};
-	    	if (findByEmail == undefined || findByEmail == null ) {
-			    //Verify 
-			    Annoncor.authenticate(email, password,(errAuth, isexist,foundUser)=>{
-			      //If user does exist
-			      if (foundUser == false || foundUser == null){
-			      	var toCreateUser = {
-					      lastname: req.body.lastname,
-					      firstname: req.body.firstname,
-					      password: password,
-					      email: req.body.email,
-					      emplacement: req.body.emplacement,
-					      lat: req.body.lat,
-					      lng: req.body.lng,
-					      whatapp: req.body.whatapp,
-					      phone: req.body.phone,
-					      image: '',
-					    }	
+	//     	}else{
+	// 	    	findByEmail = foundUserByEmail;
+	//     	};
+	//     	if (findByEmail == undefined || findByEmail == null ) {
+	// 		    //Verify 
+	// 		    Annoncor.authenticate(email, password,(errAuth, isexist,foundUser)=>{
+	// 		      //If user does exist
+	// 		      if (foundUser == false || foundUser == null){
+	// 		      	var toCreateUser = {
+	// 				      lastname: req.body.lastname,
+	// 				      firstname: req.body.firstname,
+	// 				      password: password,
+	// 				      email: req.body.email,
+	// 				      emplacement: req.body.emplacement,
+	// 				      lat: req.body.lat,
+	// 				      lng: req.body.lng,
+	// 				      whatapp: req.body.whatapp,
+	// 				      phone: req.body.phone,
+	// 				      image: '',
+	// 				    }	
 
-			      		Annoncor.create(toCreateUser,
-					    	function(errCreate,rsult){//
-				      		if (errCreate == null) {
-				      			req.session.user = toCreateUser;
-				      			req.session.user.id = rsult.insertId;
-							    //Create Annoncor
-								res.render('pages/account', {
-									message:'Votre profile est crée avec succés',
-									user: req.session.user
-								});      			
-				      		};
-						});
+	// 		      		Annoncor.create(toCreateUser,
+	// 				    	function(errCreate,rsult){//
+	// 			      		if (errCreate == null) {
+	// 			      			req.session.user = toCreateUser;
+	// 			      			req.session.user.id = rsult.insertId;
+	// 						    //Create Annoncor
+	// 							res.render('pages/account', {
+	// 								message:'Votre profile est crée avec succés',
+	// 								user: req.session.user
+	// 							});      			
+	// 			      		};
+	// 					});
 
-			      }
-			      //If user does not exist
-			      else{
-			        //Create Car
-			        res.render('pages/login',{
-			          message : 'User Aleardy exist, try connecting',
-			          user : req.session.user,
-			        });
-			      }
-			    });    
-		    }else{
-		    	req.session.user = findByEmail;
-			    //Create Annoncor
-				res.redirect(200,'/account'); 	    	
-		    };
-		});    	
-	};
+	// 		      }
+	// 		      //If user does not exist
+	// 		      else{
+	// 		        //Create Car
+	// 		        res.render('pages/login',{
+	// 		          message : 'User Aleardy exist, try connecting',
+	// 		          user : req.session.user,
+	// 		        });
+	// 		      }
+	// 		    });    
+	// 	    }else{
+	// 	    	req.session.user = findByEmail;
+	// 		    //Create Annoncor
+	// 			res.redirect(200,'/account'); 	    	
+	// 	    };
+	// 	});    	
+	// };
 });
 
 

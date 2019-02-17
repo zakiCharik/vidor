@@ -16,7 +16,7 @@ var path = require('path');
 var fs = require('fs'),
     https = require('https');
 
-var port = 80;
+var port = 83;
 //console.log(fs.readFileSync(__dirname+'/../privkey.pem'));
 
  var options = {
@@ -52,7 +52,7 @@ server.getConnections(function(error, count) {
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(88);
+server.listen(3001);
 server.on('error',onError);
 server.on('listening',onListening);
 //https

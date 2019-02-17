@@ -94,15 +94,26 @@
       </div>
       <div style="postion: relative;">
 
-        <a href="#" class="up-user-face">
-          <img src="../img/faces.jpg" class="user-face">
-        </a> 
 
-        <div class="login-nav">
+
           <% if ( user !== undefined || user !== null) { %>
-            <h2>Bienvenu </h2>
+            <a href="#" class="up-user-face">
+              <img src="<%= user.picture %>" class="user-face">
+            </a> 
+            <div class="login-nav">
+              <h2>Bienvenu <%= user.nickname %></h2>
+              <div>
+                <ul>
+                  <li><a style="color: #5e5f61;">Mon Compte</a></li>
+                  <li><a style="color: #5e5f61;">Gérer mes annonces</a></li>
+                  <li><a href='/logout' style="color: #5e5f61;">Logout</a></li>
+                </ul>
+              </div>
           <% } else { %>    
-         
+            <a href="#" class="up-user-face">
+              <img src="../img/faces.jpg" class="user-face">
+            </a>          
+          <div class="login-nav">
             <h2>Bienvenu <%= user.lastname %></h2>
             <form method="post">
                 <div class="form-group">

@@ -1,5 +1,5 @@
 var mySqlClient = require('../db');
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 
 
 var Annoncor = {
@@ -19,6 +19,7 @@ var Annoncor = {
 		      phone: annoncor.phone,
 		      whatapp: annoncor.whatapp,
 		      whatapp: annoncor.whatapp,
+		      confirmed_email: annoncor.confirmed_email,
 		      date_join: Date.now(),
 		      image: annoncor.image,
 		    };
@@ -76,23 +77,23 @@ var Annoncor = {
 	},
 	
 	authenticate: function(email, password,callback){
-		Annoncor.findByEmail(email, (err, user) => {
-			if (err) {
-				return callback(err, false);
-			}; 
-			if (user[0] != undefined && user[0] != null) {
-				bcrypt.compare(password, user[0].password, function (err, result) {
-					if (result === true) {
-						return callback(null, true,user[0]);
-						return callback(null, true,user[0]);
-					} else {
-					  return callback(err, false,null);
-					}
-				});				
-			}else{
-				return callback(err, false,null);				
-			};
-		});
+		// Annoncor.findByEmail(email, (err, user) => {
+		// 	if (err) {
+		// 		return callback(err, false);
+		// 	}; 
+		// 	if (user[0] != undefined && user[0] != null) {
+		// 		bcrypt.compare(password, user[0].password, function (err, result) {
+		// 			if (result === true) {
+		// 				return callback(null, true,user[0]);
+		// 				return callback(null, true,user[0]);
+		// 			} else {
+		// 			  return callback(err, false,null);
+		// 			}
+		// 		});				
+		// 	}else{
+		// 		return callback(err, false,null);				
+		// 	};
+		// });
 
 	},
 

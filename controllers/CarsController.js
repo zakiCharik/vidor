@@ -1,8 +1,11 @@
-const express = require('express');
-const router = express.Router();
-const nodemailer = require('nodemailer');
-const Nexmo = require('nexmo');
-const nexmo = new Nexmo({
+const express           = require('express');
+const router            = express.Router();
+const nodemailer        = require('nodemailer');
+const Nexmo             = require('nexmo');
+const passport          = require('passport');
+const secured           = require('../lib/secured');
+const ensureLoggedIn    = require('connect-ensure-login').ensureLoggedIn();
+const nexmo             = new Nexmo({
   apiKey: '3b780a33',
   apiSecret: 'AJmSZAXMLKfhCN84'
 })
@@ -21,14 +24,6 @@ var Car = require('../models/Car');
 var Annoncor = require('../models/Annoncor');
 
 
-//midlleware ensureLogin
-function ensureLogin(req, res, next) {
-  if (req.session.user) {
-    return next();
-  } else {
-    res.redirect('/login');
-  }
-};
 
 
 // GET /Cars
@@ -55,11 +50,8 @@ router.get('/view/:id',function(req, res, next) {
     Annoncor.findById(foundCar[0].annoncor, (errFoundById, annoncorFound) =>{
       //
       var user, annoncor;
-      if (req.session.user == undefined || req.session.user == null ) {
-        user = null;
-      }else{
-        user = req.session.user;        
-      };
+
+      user = req.user;
       
       if (annoncorFound == undefined || annoncorFound == null ) {
         annoncor = null;
@@ -85,14 +77,14 @@ router.get('/view/:id',function(req, res, next) {
 
 
 // GET /Cars/:id/edit
-router.get('/edit/:id', ensureLogin,function(req, res, next) {
+router.get('/edit/:id',  ensureLoggedIn,function(req, res, next) {
   //...
 
   Car.find({}, (err, Cars) => {
     res.send({
 
       Car : Cars,
-      user : req.session.user 
+      user : req.user,
     });
   });
   
@@ -101,21 +93,20 @@ router.get('/edit/:id', ensureLogin,function(req, res, next) {
 
 
 // POST /create
-router.get('/add', ensureLogin,function(req, res, next) {
+router.get('/add',  ensureLoggedIn,function(req, res, next) {
   //...
   console.log('REQ - GET : Car/ADD');
-
   //Create Car
   res.render('pages/add',{
     message : null,
     cars : null,
-    user : req.session.user,
+    user : req.user,
   });
 
 });
 
 // POST /create
-router.post('/add',ensureLogin,function(req, res, next) {
+router.post('/add',ensureLoggedIn,function(req, res, next) {
   //..
   console.log('REQ - POST : Car/ADD');
   console.log('req.body',req.body);
@@ -125,21 +116,21 @@ router.post('/add',ensureLogin,function(req, res, next) {
     phone = req.body.phone;
     email = req.body.email;
 
-    var mailOptions = {
-      from: 'z.charik@gmail.com',
-      to: email,
-      subject: 'Inscription VEDOR.MA, vendre ou achtez votre voiture mab9ach s3ib',
-      text: 'Merci pour votre inscription, l\'équipe de VEDOR.MA vous souhaite le bienvenu', // plain text body
-      html: '<b>Merci pour votre inscription, l\'équipe de VEDOR.MA vous souhaite le bienvenu</b>' // html body
-    };
+    // var mailOptions = {
+    //   from: 'z.charik@gmail.com',
+    //   to: email,
+    //   subject: 'Inscription VEDOR.MA, vendre ou achtez votre voiture mab9ach s3ib',
+    //   text: 'Merci pour votre inscription, l\'équipe de VEDOR.MA vous souhaite le bienvenu', // plain text body
+    //   html: '<b>Merci pour votre inscription, l\'équipe de VEDOR.MA vous souhaite le bienvenu</b>' // html body
+    // };
 
-    transporter.sendMail(mailOptions, function(error, info){
-      if (error) {
-        console.log(error);
-      } else {
-        console.log('Email sent: ' + info.response);
-      }
-    });
+    // transporter.sendMail(mailOptions, function(error, info){
+    //   if (error) {
+    //     console.log(error);
+    //   } else {
+    //     console.log('Email sent: ' + info.response);
+    //   }
+    // });
     //SMS NEXMO
     const from = 'VEDOR.MA';
     const to = '00212663154995';

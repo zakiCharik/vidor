@@ -1,35 +1,56 @@
-const express = require('express');
-const path = require('path');
-const favicon = require('serve-favicon');
-const logger = require('morgan');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-const session = require('express-session');
-const dotenv = require('dotenv');
+const express           = require('express');
+const path              = require('path');
+const favicon           = require('serve-favicon');
+const logger            = require('morgan');
+const cookieParser      = require('cookie-parser');
+const bodyParser        = require('body-parser');
+const session           = require('express-session');
+const dotenv            = require('dotenv');
 //FAcebook utilities
-const FacebookStrategy = require('passport-facebook').Strategy;
-const passport          =     require('passport');
-const config            =     require('./config')
-console.log('Loading environement variable');
+const FacebookStrategy  = require('passport-facebook').Strategy;
+const config            = require('./config')
+// Load Passport
+const passport          = require('passport');
+const Auth0Strategy     = require('passport-auth0');
+//googleapi configuration
+const {google}          = require('googleapis');
+// Imports the Google Cloud client library
+const {Storage}         = require('@google-cloud/storage');
+// Creates a client
+const storage           = new Storage();
+const app               = express();
+
 dotenv.load();
 
+// Configure Passport to use Auth0
+var strategy = new Auth0Strategy(
+  {
+    domain: process.env.AUTH0_DOMAIN,
+    clientID: process.env.AUTH0_CLIENT_ID,
+    clientSecret: process.env.AUTH0_CLIENT_SECRET,
+    callbackURL:
+      process.env.AUTH0_CALLBACK_URL || 'http://localhost:3000/callback'
+  },
+  function (accessToken, refreshToken, extraParams, profile, done) {
+    // accessToken is the token to call Auth0 API (not needed in the most cases)
+    // extraParams.id_token has the JSON Web Token
+    // profile has all the information from the user
+    return done(null, profile);
+  }
+);
 
-//googleapi configuration
-const {google} = require('googleapis');
 
 const googleConfig = {
   clientId: process.env.GOOGLE_CLIENT_ID, // e.g. asdfghjkljhgfdsghjk.apps.googleusercontent.com
   clientSecret: process.env.GOOGLE_CLIENT_SECRET, // e.g. _ASDFA%DFASDFASDFASD#FAD-
   redirect: process.env.GOOGLE_REDIRECT_URL // this must match your google api settings
 };
-// Imports the Google Cloud client library
-const {Storage} = require('@google-cloud/storage');
-// Creates a client
-const storage = new Storage();
 
 console.log('Loading express configuration');
-const app = express();
 
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(strategy);
 
 // Passport session setup.
 passport.serializeUser(function(user, done) {
@@ -52,10 +73,6 @@ passport.use(new FacebookStrategy({
     });
   }
 ));
-//authentication with facebook
-app.use(passport.initialize());
-app.use(passport.session());
-//authentication with facebook
 
 // view engine setup
 app.set('view engine', 'ejs');
@@ -76,18 +93,20 @@ app.use(
     saveUninitialized: false
   })
 );
+//authentication with facebook
+app.use(passport.initialize());
+app.use(passport.session());
+//authentication with facebook
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'uploads')));
 
 //==================Count of user
 
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "access-control-allow-origin, Origin, X-Requested-With, Content-Type, Accept");
   res.header("Accept", 'application/json');
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
   next();
 });
 
@@ -165,12 +184,14 @@ function ensureAuthenticated(req, res, next) {
 =========================*/
 
 const api = require('./routes/api');
+const marque = require('./routes/marque');
 const routes = require('./routes/index');
 const cars = require('./controllers/CarsController');
 
 app.use('/', routes);
 app.use('/api/v1', api);
 app.use('/cars', cars);
+app.use('/marques', marque);
 
 //Facebook Account
 // app.get('/account', ensureAuthenticated, function(req, res){
@@ -236,4 +257,12 @@ app.use(function(err, req, res, next) {
   };
 });
 
+
+//middleware/userInViews.js
+module.exports = function () {
+  return function (req, res, next) {
+    res.locals.user = req.user;
+    next();
+  };
+};
 module.exports = app;

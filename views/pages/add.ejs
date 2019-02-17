@@ -46,12 +46,8 @@
                       <!-- Category  -->
                       <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
                          <label class="control-label">Maison </label>
-                         <select class="form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true" name="maison">
-                            <option label="BMW">BMW</option>
-                            <option>Honda </option>
-                            <option>Hyundai </option>
-                            <option>Nissan </option>
-                            <option>Mercedes Benz </option>
+                         <select class="form-control select2-hidden-accessible marque" tabindex="-1" aria-hidden="true" name="maison" id="maisonSelect">
+
                          </select>
                       </div>
                       <!-- Price  -->
@@ -64,11 +60,9 @@
                       <!-- Category  -->
                       <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
                          <label class="control-label">Modèle</label>
-                         <select class="form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true" name="model">
-                            <option label="Sport Car">Sport Car</option>
-                            <option>Sport Car</option>
-                            <option>Compact </option>
-                            <option>Coupe </option>
+                         <select class="form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true" name="model" id="modelSelect">
+
+
                          </select>
                       </div>
                       <!-- Price  -->
@@ -109,6 +103,60 @@
                             <option>2017</option>
                             <option>2016</option>
                             <option>2015</option>
+                            <option>2014</option>
+                            <option>2013</option>
+                            <option>2012</option>
+                            <option>2011</option>
+                            <option>2010</option>
+                            <option>2009</option>
+                            <option>2008</option>
+                            <option>2007</option>
+                            <option>2006</option>
+                            <option>2005</option>
+                            <option>2004</option>
+                            <option>2003</option>
+                            <option>2002</option>
+                            <option>2001</option>
+                            <option>2000</option>
+                            <option>1999</option>
+                            <option>1998</option>
+                            <option>1997</option>
+                            <option>1996</option>
+                            <option>1995</option>
+                            <option>1994</option>
+                            <option>1993</option>
+                            <option>1992</option>
+                            <option>1991</option>
+                            <option>1990</option>
+                            <option>1989</option>
+                            <option>1988</option>
+                            <option>1987</option>
+                            <option>1986</option>
+                            <option>1985</option>
+                            <option>1984</option>
+                            <option>1983</option>
+                            <option>1982</option>
+                            <option>1981</option>
+                            <option>1980</option>
+                            <option>1979</option>
+                            <option>1978</option>
+                            <option>1977</option>
+                            <option>1976</option>
+                            <option>1975</option>
+                            <option>1974</option>
+                            <option>1973</option>
+                            <option>1972</option>
+                            <option>1971</option>
+                            <option>1970</option>
+                            <option>1969</option>
+                            <option>1968</option>
+                            <option>1967</option>
+                            <option>1965</option>
+                            <option>1964</option>
+                            <option>1963</option>
+                            <option>1962</option>
+                            <option>1961</option>
+                            <option>1960</option>
                          </select>                            
                       </div>
                       <!-- Prix Vignette  -->
@@ -321,7 +369,7 @@
                    </div>
                    <!-- end row -->
                    <!-- Image Upload  -->
-                   <div class="row">
+                   <div class="row hide hidden">
                       <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
                          <label class="control-label">Photos pour votre annonce<small>Veuillez ajouter des images de votre annonce. (350x450)</small></label>
                          <div id="dropzone" class="dropzone dz-clickable"><div class="dz-default dz-message"><span>Déposer des fichiers ici pour télécharger</span></div></div>
@@ -339,7 +387,7 @@
 
                    <!-- end row -->
                    <!-- Ad Tags  -->
-                   <div class="row">
+                   <div class="row  hide hidden">
                       <div class="col-md-12 col-lg-12 col-xs-12  col-sm-12">
                          <label class="control-label">Annonce Tags </label>
                          <input class="form-control" name="tags" id="tags" value="honda ,honda civic,sport car" data-tagsinput-init="true" style="display: none;"><div id="tags_tagsinput" class="tagsinput" style="width: 100%; min-height: 100px; height: 100px;"><span class="tag"><span>honda&nbsp;&nbsp;</span><a href="#" title="Removing tag">x</a></span><span class="tag"><span>honda civic&nbsp;&nbsp;</span><a href="#" title="Removing tag">x</a></span><span class="tag"><span>sport car&nbsp;&nbsp;</span><a href="#" title="Removing tag">x</a></span><div id="tags_addTag"><input id="tags_tag" value="" data-default="add a tag" style="color: rgb(102, 102, 102); width: 68px;"></div><div class="tags_clear"></div></div>
@@ -347,7 +395,7 @@
                    </div>
                    <!-- end row -->
                    <!-- Ad Type  -->
-                   <div class="row">
+                   <div class="row  hide hidden">
                       <!-- Ad Condition  -->
                       <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
                          <label class="control-label">Conditions<small>Objet Condition</small></label>
@@ -370,7 +418,7 @@
                       </div>
                    </div>
                    <!-- end row -->
-                   <div class="row">
+                   <div class="row  hide hidden">
                       <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
                          <label class="control-label">Votre nom</label>
                          <input class="form-control" placeholder="eg John Doe" type="text" name="name">
@@ -381,7 +429,7 @@
                       </div>
                    </div>
                    <!-- end row -->
-                   <div class="row">
+                   <div class="row  hide hidden">
                       <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
                          <label class="control-label">Numéro de téléphone<small>Numéro de confirmation</small></label>
                          <input class="form-control" placeholder="eg +92-0321-123-456-789" type="tel" name="phone">
@@ -459,6 +507,66 @@
 
     <!-- Google Map  -->
     <script type="text/javascript">
+      //on click select marque
+      $('.select2-selection.select2-selection--single').click('click',function(){
+          /*console.log('Marque clicked');
+          $.ajax({
+            url: 'http://localhost:3000/marques/',
+            method: 'GET',
+            data:{
+            },
+            success: function(data){
+              console.log(data);
+              console.log($('#select2-maison-*'));
+            },
+            error: function(err){}
+
+          });*/
+      });
+
+      //load Marques  
+      $(document).ready(function(){
+          $.ajax({
+            url: 'http://localhost:3000/marques/',
+            method: 'GET',
+            data:{
+            },
+            success: function(data){
+              console.log(data);
+              console.log($("#maisonSelect"));
+              data.forEach(function(elem){
+                $("#maisonSelect").append(new Option(elem.title, elem.title));
+              });
+            },
+            error: function(err){
+              console.error(err);
+            }
+          });
+      });
+
+      //load Marques  
+      $('#maisonSelect').change(function(){
+      var selected = $(this).children("option:selected").val();
+        console.log();
+          $.ajax({
+            url: 'http://localhost:3000/marques/make/'+selected,
+            method: 'GET',
+            data:{
+            },
+            success: function(data){
+              $('#modelSelect option').remove();
+              console.log(data);
+              console.log($("#modelSelect"));
+              data.forEach(function(elem){
+                $("#modelSelect").append(new Option(elem.title, elem.title));
+              });
+            },
+            error: function(err){
+              console.error(err);
+            }
+          });
+      });
+
       $('.up-user-face').on('click',function(){
         if (!$('.login-nav').is(':visible')) {
 
