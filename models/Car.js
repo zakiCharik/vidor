@@ -41,6 +41,8 @@ var car = {
 		      colorcaroursserie: car.colorcaroursserie,
 		      jointes: car.jointes,
 		      bluethoot: car.bluethoot,
+		      status_ads: car.status_ads,
+		      date_publication: car.date_publication,
 		      amfmstereo: car.amfmstereo,
 		      backupcamera: car.backupcamera,
 		      annoncor: car.annoncor, // ID ANNONCEUR

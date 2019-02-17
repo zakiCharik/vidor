@@ -133,7 +133,7 @@ router.post('/add',ensureLoggedIn,function(req, res, next) {
     // });
     //SMS NEXMO
     const from = 'VEDOR.MA';
-    const to = '00212663154995';
+    const to = phone;
     const text = 'Merci pour votre inscription, l\'équipe de VEDOR.MA vous souhaite le bienvenu '+req.body.name;
     nexmo.message.sendSms(from, phone, text);
     //SMS NEXMO

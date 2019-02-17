@@ -52,7 +52,7 @@ router.get('/callback', function (req, res, next) {
 		delete req.session.returnTo;
         Annoncor.exist(req.user.emails[0].value,(errAuth, does_Exist)=>{
         	if (!does_Exist) {
-				Annoncor.create({
+        		var this_user = {
 				  lastname: req.user.nickname,
 				  firstname: req.user.nickname,
 				  password: 'passwordless',
@@ -64,14 +64,19 @@ router.get('/callback', function (req, res, next) {
 				  image: req.user.picture,
 				  whatapp: '',
 				  phone: '',
-				},
+				};
+				Annoncor.create(this_user,
 				function(errCreate,rsult){//
 					if (rsult.insertId != undefined) {
+						req.session.user = this_user;
+						req.session.user.id = rsult.insertId;
 				    	//Create Annoncor
 				        res.redirect(returnTo);
 				    }
 				});        		
         	}else{
+				req.session.user = req.user;
+				req.session.user.id = rsult.insertId;
 		        res.redirect(returnTo);
         	}
         });
