@@ -418,7 +418,7 @@
                       </div>
                    </div>
                    <!-- end row -->
-                   <div class="row  hide hidden">
+                   <div class="row ">
                       <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
                          <label class="control-label">Votre nom</label>
                          <input class="form-control" placeholder="eg John Doe" type="text" name="name">
@@ -429,7 +429,7 @@
                       </div>
                    </div>
                    <!-- end row -->
-                   <div class="row  hide hidden">
+                   <div class="row ">
                       <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
                          <label class="control-label">Numéro de téléphone<small>Numéro de confirmation</small></label>
                          <input class="form-control" placeholder="eg +92-0321-123-456-789" type="tel" name="phone">
@@ -527,7 +527,7 @@
       //load Marques  
       $(document).ready(function(){
           $.ajax({
-            url: 'http://localhost:3000/marques/',
+            url: 'https://vidor.ma:3000/marques/',
             method: 'GET',
             data:{
             },
@@ -549,7 +549,7 @@
       var selected = $(this).children("option:selected").val();
         console.log();
           $.ajax({
-            url: 'http://localhost:3000/marques/make/'+selected,
+            url: 'https://vidor.ma:3000/marques/make/'+selected,
             method: 'GET',
             data:{
             },
