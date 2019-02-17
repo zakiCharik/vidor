@@ -77,8 +77,9 @@ router.get('/callback', function (req, res, next) {
 				});        		
         	}else{
 			    Annoncor.findByEmail(email,(errAuth, foundUser)=>{
+			    	console.log(foundUser);
 					req.session.user = req.user;
-					req.session.user.id = foundUser[0].id;
+					req.session.user.id = foundUser.id;
 			        res.redirect(returnTo);
 			    });
 
