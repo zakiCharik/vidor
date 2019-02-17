@@ -50,7 +50,8 @@ router.get('/callback', function (req, res, next) {
 		if (err) { return next(err); }
 		const returnTo = req.session.returnTo;
 		delete req.session.returnTo;
-        Annoncor.exist(req.user.emails[0].value,(errAuth, does_Exist)=>{
+		var email = req.user.emails[0].value;
+        Annoncor.exist(email,(errAuth, does_Exist)=>{
         	if (!does_Exist) {
         		var this_user = {
 				  lastname: req.user.nickname,
@@ -75,9 +76,12 @@ router.get('/callback', function (req, res, next) {
 				    }
 				});        		
         	}else{
-				req.session.user = req.user;
-				req.session.user.id = rsult.insertId;
-		        res.redirect(returnTo);
+			    Annoncor.findByEmail(email,(errAuth, foundUser)=>{
+					req.session.user = req.user;
+					req.session.user.id = foundUser[0].id;
+			        res.redirect(returnTo);
+			    });
+
         	}
         });
       //check if user persisted and do it if not
