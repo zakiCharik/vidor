@@ -16,14 +16,14 @@ var Annoncor = require('../models/Annoncor');
 router.get('/',function(req, res, next) {
   //...
   console.log('REQ - GET : INDEX');
-  console.log('User session', req.session.user);
+  console.log('User session', req.user);
   Car.find({}, (err, Cars) => {
 	console.log('User Cars', Cars);
 
     res.render('pages/index',{
       listCars : Cars,
       Cars : JSON.stringify(Cars),
-      user : req.session.user
+      user : req.user
     });
   });
 });

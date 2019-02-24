@@ -1,7 +1,8 @@
 bin/www
 db.js
-./node_modules/*
-node_modules/*
 .env
+.env-prod
+./node_modules/*
+/node_modules/*
 node_modules/*
-node_modules/*
+.node_modules/*

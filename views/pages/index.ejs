@@ -8,7 +8,6 @@
     <meta name="author" content="">
 
     <meta name="google-signin-client_id" content="AIzaSyBtiI8IlZigeb2s9Ao3viXKC3MAxGQrCdw.apps.googleusercontent.com">
-    <!-- meta name="google-signin-client_id" content="5a6toFk2kw48OcQvW4Amg1eN4rRSslpKWWx8Cx4FkUc.apps.googleusercontent.com" -->
 
     <title>VIDEO.MA | Acceuil</title>
 
@@ -138,41 +137,56 @@
 
       </div>
       <div style="postion: relative;">
-
-        <a href="#" class="up-user-face">
-          <img src="../img/faces.jpg" class="user-face">
-        </a> 
-
-        <div class="login-nav">
- 
-         
-            <form method="post">
-                <div class="form-group">
-                  <h4 style="font-size: 14px;">Login or E-mail</h4>
-                  <input type="text" name="stm_user_login" autocomplete="off" placeholder="Enter login or E-mail" style="    padding-left: 8px;height: 40px;line-height: 40px;">
+        <% if (user !== undefined ) { %>
+              <a href="#" class="up-user-face">
+                <img src="<%= user.picture %>" class="user-face">
+              </a> 
+              <div class="login-nav">
+                <h2>Bienvenu <%= user.nickname %></h2>
+                <div>
+                  <ul>
+                    <li><a style="color: #5e5f61;">Mon Compte</a></li>
+                    <li><a style="color: #5e5f61;">Gérer mes annonces</a></li>
+                    <li><a href='/logout' style="color: #5e5f61;">Logout</a></li>
+                  </ul>
                 </div>
+        <% } else { %>
+          <a href="#" class="up-user-face">
+            <img src="../img/faces.jpg" class="user-face">
+          </a> 
 
-                <div class="form-group">
-                  <h4 style="font-size: 14px;">Password</h4>
-                  <input type="password" name="stm_user_password" autocomplete="off" placeholder="Enter password" style="    padding-left: 8px;height: 40px;line-height: 40px;">
-                </div>
+          <div class="login-nav">
+   
+           
+              <form method="post">
+                  <div class="form-group">
+                    <h4 style="font-size: 14px;">Login or E-mail</h4>
+                    <input type="text" name="stm_user_login" autocomplete="off" placeholder="Enter login or E-mail" style="    padding-left: 8px;height: 40px;line-height: 40px;">
+                  </div>
 
-                <div class="form-group form-checker">
-                  <label style="float: left;display: inline; width: 100%;">
-                    <div class="checker">
-                      <span style="float: left;margin-bottom: 10px;">
-                        <input type="checkbox" name="stm_remember_me" style="opacity: 1;filter: alpha(opacity=0);-moz-opacity: 0;border: none;background: none;display: -moz-inline-box;display: inline-block;*display: inline;zoom: 1;">
-                      </span>
-                    </div>
-                    <span style="padding: 10px;">Remember me</span>
-                  </label>
-                </div>
-                <span class="stm-listing-loader"><i class="stm-icon-load1"></i></span>
-                <a href="h" class="logBtn" style="">Login</a>
-                <a href="h" class="logBtn" style="background: transparent; color: #f17f18 !important;">Sign Up</a>
-                <div class="stm-validation-message"></div>
-            </form>              
-        </div>  
+                  <div class="form-group">
+                    <h4 style="font-size: 14px;">Password</h4>
+                    <input type="password" name="stm_user_password" autocomplete="off" placeholder="Enter password" style="    padding-left: 8px;height: 40px;line-height: 40px;">
+                  </div>
+
+                  <div class="form-group form-checker">
+                    <label style="float: left;display: inline; width: 100%;">
+                      <div class="checker">
+                        <span style="float: left;margin-bottom: 10px;">
+                          <input type="checkbox" name="stm_remember_me" style="opacity: 1;filter: alpha(opacity=0);-moz-opacity: 0;border: none;background: none;display: -moz-inline-box;display: inline-block;*display: inline;zoom: 1;">
+                        </span>
+                      </div>
+                      <span style="padding: 10px;">Remember me</span>
+                    </label>
+                  </div>
+                  <span class="stm-listing-loader"><i class="stm-icon-load1"></i></span>
+                  <a href="h" class="logBtn" style="">Login</a>
+                  <a href="h" class="logBtn" style="background: transparent; color: #f17f18 !important;">Sign Up</a>
+                  <div class="stm-validation-message"></div>
+              </form>              
+          </div>  
+        <% } %>
+
       </div>    
       <a href="/cars/add" class="actionNew">
           <div style="padding: 2px;">
@@ -255,7 +269,7 @@
         <p class="lead">Vous êtes à la recherche d'une voiture, où vous cherchez à vendre votre enciens voiture. VIDOR.MA et là pour vous. </p>
         <div class="row">
 	<% if(listCars.length > 0 ) { %>
-          <% for (var i = 0 ; i < 6; i++) { %>
+          <% for (var i = 0 ; i < listCars.length; i++) { %>
             <div class="col-md-3  col-lg-3 col-sm-4 col-xs-12" >
               <div class="category-grid-box-1">
 
